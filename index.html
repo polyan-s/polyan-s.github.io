@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>AI-фотосессии одежды</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Manrope:wght@400;500;600&family=JetBrains+Mono:wght@400&display=swap">
+<style>
+/* Layout: contact-sheet editorial — narrow text column, wide image grids, case studies as numbered steps from product photo to finished frames */
+:root{
+  --bg:#f3f1ee; --surface:#e8e4de; --fg:#1b1a19; --muted:#6c6762; --line:#d3cdc5; --accent:#8a3b2e;
+  --display:"Fraunces", Georgia, serif; --body:"Manrope", system-ui, sans-serif; --mono:"JetBrains Mono", ui-monospace, monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#161514;--surface:#211f1d;--fg:#ece8e2;--muted:#9c958d;--line:#34302c;--accent:#d98a74;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#161514;--surface:#211f1d;--fg:#ece8e2;--muted:#9c958d;--line:#34302c;--accent:#d98a74;color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--body);font-size:16px;line-height:1.6;padding-inline:clamp(16px,4vw,48px);padding-block:40px 80px}
+.wrap{max-width:1180px;margin:0 auto;display:grid;gap:88px}
+h1,h2{font-family:var(--display);font-weight:600;text-wrap:balance;margin:0;letter-spacing:-0.01em}
+h1{font-size:clamp(34px,6vw,64px);line-height:1.05}
+h2{font-size:clamp(26px,3.6vw,38px);line-height:1.15}
+p{margin:0;max-width:62ch}
+.label{font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.hero{display:grid;gap:22px;border-bottom:1px solid var(--line);padding-bottom:48px}
+.hero .lead{font-size:19px;color:var(--fg)}
+.tags{display:flex;flex-wrap:wrap;gap:8px}
+.tag{font-size:13px;border:1px solid var(--line);border-radius:999px;padding:4px 12px;color:var(--muted)}
+section{display:grid;gap:28px}
+.head{display:grid;gap:12px}
+.step{display:grid;grid-template-columns:minmax(0,260px) minmax(0,1fr);gap:28px;align-items:start}
+@media (max-width:760px){.step{grid-template-columns:1fr}}
+figure{margin:0;display:grid;gap:8px}
+figcaption{font-size:13px;color:var(--muted)}
+img,video{width:100%;max-width:100%;display:block;border-radius:4px;background:var(--surface)}
+.grid4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+@media (max-width:760px){.grid4{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.grid7{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:8px}
+@media (max-width:900px){.grid7{grid-template-columns:repeat(4,minmax(0,1fr))}}
+@media (max-width:480px){.grid7{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.grid5{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px}
+@media (max-width:900px){.grid5{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+@media (max-width:760px){.grid3{grid-template-columns:1fr}}
+.product{border:1px solid var(--line);padding:12px;border-radius:6px;background:var(--surface)}
+.note{border-left:2px solid var(--accent);padding-left:16px;color:var(--muted);font-size:15px;max-width:70ch}
+ul.plain{margin:0;padding:0;list-style:none;display:grid;gap:10px;max-width:70ch}
+ul.plain li{padding-left:18px;position:relative}
+ul.plain li::before{content:"";position:absolute;left:0;top:.7em;width:8px;height:1px;background:var(--accent)}
+.contact{border-top:1px solid var(--line);padding-top:40px;display:grid;gap:14px}
+.contact .val{font-family:var(--mono);font-size:15px;color:var(--accent)}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <header class="hero">
+    <span class="label">Портфолио · AI-креатор / нейрофотограф</span>
+    <h1>AI-фотосессии одежды с нуля, по одному фото товара</h1>
+    <p class="lead">Делаю реалистичные съёмки на модели для карточек маркетплейсов, когда есть только фото вещи. Вещь переношу один в один, модель и локация остаются одними и теми же на всей серии, плюс короткие ролики для карточек и Reels.</p>
+    <div class="tags">
+      <span class="tag">Nano Banana Pro</span><span class="tag">GPT Image</span><span class="tag">Midjourney</span>
+      <span class="tag">Seedance 2.5</span><span class="tag">Kling 3.0</span><span class="tag">Higgsfield</span><span class="tag">Sync.so (липсинк)</span>
+    </div>
+  </header>
+
+  <section>
+    <div class="head">
+      <span class="label">Кейс WB · карточка товара по одному фото</span>
+      <h2>Кардиган с косами: набор фото для карточки Wildberries</h2>
+      <p>Исходник — одно фото вещи без модели. Из него собран набор для карточки: главное фото на светлом фоне, деталь вязки, вариант носки расстёгнутым, ракурс в три четверти для посадки и длины, лайфстайл-кадр. Узор кос, цвет, пуговицы и длина совпадают с товаром.</p>
+    </div>
+    <div class="step">
+      <figure class="product">
+        <img src="img/wb_product.jpg" alt="Исходное фото товара: кремовый кардиган с косами" loading="lazy">
+        <figcaption>Исходник: фото товара от селлера</figcaption>
+      </figure>
+      <figure>
+        <img src="img/wb_main.jpg" alt="Главное фото карточки: модель в кардигане на светлом фоне" loading="lazy">
+        <figcaption>Главное фото карточки, 3:4</figcaption>
+      </figure>
+    </div>
+    <div class="grid4">
+      <figure><img src="img/wb_detail.jpg" alt="Деталь вязки и пуговиц" loading="lazy"><figcaption>Деталь: вязка, пуговицы, манжета</figcaption></figure>
+      <figure><img src="img/wb_open.jpg" alt="Кардиган расстёгнут поверх белого топа" loading="lazy"><figcaption>Как носить: расстёгнутым</figcaption></figure>
+      <figure><img src="img/wb_side.jpg" alt="Ракурс в три четверти" loading="lazy"><figcaption>Три четверти: длина и посадка</figcaption></figure>
+      <figure><img src="img/wb_life.jpg" alt="Лайфстайл у окна с кружкой" loading="lazy"><figcaption>Лайфстайл для доп. фото</figcaption></figure>
+    </div>
+  </section>
+
+  <section>
+    <div class="head">
+      <span class="label">Кейс WB · инфографика</span>
+      <h2>Тот же кардиган: 5 слайдов инфографики для карточки</h2>
+      <p>Из AI-фото собрана карточка целиком: обложка с главными преимуществами, детали крупным планом, состав и уход, размерная сетка, лайфстайл с подсказками «с чем носить». Формат WB 900×1200, текст свёрстан вручную, поэтому он чёткий и без ошибок. Состав и размеры в макете условные.</p>
+    </div>
+    <div class="grid5">
+      <figure><img src="img/info1.jpg" alt="Слайд 1: обложка с преимуществами и размерами" loading="lazy"><figcaption>1 · Обложка</figcaption></figure>
+      <figure><img src="img/info2.jpg" alt="Слайд 2: детали вязки, вырез, резинка" loading="lazy"><figcaption>2 · Детали</figcaption></figure>
+      <figure><img src="img/info3.jpg" alt="Слайд 3: состав и уход" loading="lazy"><figcaption>3 · Состав и уход</figcaption></figure>
+      <figure><img src="img/info4.jpg" alt="Слайд 4: размерная сетка" loading="lazy"><figcaption>4 · Размерная сетка</figcaption></figure>
+      <figure><img src="img/info5.jpg" alt="Слайд 5: лайфстайл и с чем носить" loading="lazy"><figcaption>5 · С чем носить</figcaption></figure>
+    </div>
+  </section>
+
+  <section>
+    <div class="head">
+      <span class="label">Кейс 1 · одна вещь → серия из 8 кадров</span>
+      <h2>Шёлковый топ с кружевом: от фото товара до фешн-серии</h2>
+      <p>Исходник — только фото топа на сайте бренда. Задача: собрать серию как для карточки и соцсетей, с одной моделью, одной локацией и точным кружевом в каждом кадре.</p>
+    </div>
+    <div class="step">
+      <figure class="product">
+        <img src="img/product.jpg" alt="Исходное фото товара: чёрный шёлковый топ с кружевным вырезом" loading="lazy">
+        <figcaption>Исходник: фото товара</figcaption>
+      </figure>
+      <figure>
+        <img src="img/lace0.jpg" alt="Базовый кадр: модель в этом топе в интерьере с рифлёным стеклом" loading="lazy">
+        <figcaption>Базовый кадр: модель, образ и локация. От него строятся все ракурсы, поэтому лицо и вещь не уплывают.</figcaption>
+      </figure>
+    </div>
+    <div class="grid4">
+      <figure><img src="img/lace1.jpg" alt="Портрет в камеру" loading="lazy"><figcaption>Портрет в камеру</figcaption></figure>
+      <figure><img src="img/lace2.jpg" alt="Три четверти" loading="lazy"><figcaption>Три четверти</figcaption></figure>
+      <figure><img src="img/lace4.jpg" alt="Крупно вещь" loading="lazy"><figcaption>Крупно: кружево и посадка</figcaption></figure>
+      <figure><img src="img/lace8.jpg" alt="Деталь с рукой" loading="lazy"><figcaption>Деталь: рука на бретели</figcaption></figure>
+      <figure><img src="img/lace5.jpg" alt="Сидя в кресле" loading="lazy"><figcaption>Сидя в кресле</figcaption></figure>
+      <figure><img src="img/lace6.jpg" alt="У столика" loading="lazy"><figcaption>У столика</figcaption></figure>
+      <figure><img src="img/lace7.jpg" alt="Через плечо" loading="lazy"><figcaption>Через плечо, спина</figcaption></figure>
+      <figure><img src="img/lace3.jpg" alt="Ракурс снизу" loading="lazy"><figcaption>Ракурс снизу</figcaption></figure>
+    </div>
+    <p class="note">Проверяю каждый кадр крупно: кружево, бретели, руки и пальцы, лицо. Брак переделываю до сдачи.</p>
+  </section>
+
+  <section>
+    <div class="head">
+      <span class="label">Кейс 2 · одна вещь на 21 модели</span>
+      <h2>Тот же образ на разных типажах для A/B-тестов карточки</h2>
+      <p>Одна вещь, одна локация, одинаковый свет. Меняется только модель: блондинки, рыжие, брюнетки, разная фактура волос. Так можно проверять гипотезы CTR на главном фото, не пересобирая съёмку.</p>
+    </div>
+    <div class="grid7">
+      <img src="img/m01.jpg" alt="Модель 1" loading="lazy"><img src="img/m02.jpg" alt="Модель 2" loading="lazy"><img src="img/m03.jpg" alt="Модель 3" loading="lazy"><img src="img/m04.jpg" alt="Модель 4" loading="lazy"><img src="img/m05.jpg" alt="Модель 5" loading="lazy"><img src="img/m06.jpg" alt="Модель 6" loading="lazy"><img src="img/m07.jpg" alt="Модель 7" loading="lazy">
+      <img src="img/m08.jpg" alt="Модель 8" loading="lazy"><img src="img/m09.jpg" alt="Модель 9" loading="lazy"><img src="img/m10.jpg" alt="Модель 10" loading="lazy"><img src="img/m11.jpg" alt="Модель 11" loading="lazy"><img src="img/m12.jpg" alt="Модель 12" loading="lazy"><img src="img/m13.jpg" alt="Модель 13" loading="lazy"><img src="img/m14.jpg" alt="Модель 14" loading="lazy">
+      <img src="img/m15.jpg" alt="Модель 15" loading="lazy"><img src="img/m16.jpg" alt="Модель 16" loading="lazy"><img src="img/m17.jpg" alt="Модель 17" loading="lazy"><img src="img/m18.jpg" alt="Модель 18" loading="lazy"><img src="img/m19.jpg" alt="Модель 19" loading="lazy"><img src="img/m20.jpg" alt="Модель 20" loading="lazy"><img src="img/m21.jpg" alt="Модель 21" loading="lazy">
+    </div>
+  </section>
+
+  <section>
+    <div class="head">
+      <span class="label">Кейс 3 · короткие видео</span>
+      <h2>Ролики для карточек и Reels</h2>
+      <p>Видео с одной и той же моделью: переходы, смена образа, демонстрация волос и одежды в движении. Повторяю трендовые форматы по референсу, кадр за кадром.</p>
+    </div>
+    <div class="grid3">
+      <figure><video src="vid/before_after.mp4" poster="img/poster_before_after.jpg" controls muted playsinline preload="none"></video><figcaption>До / после: переход «ладонями», смена образа, липсинк</figcaption></figure>
+      <figure><video src="vid/curls.mp4" poster="img/poster_curls.jpg" controls muted playsinline preload="none"></video><figcaption>Вечер → утро: укладка без плойки, движение волос</figcaption></figure>
+      <figure><video src="vid/firstclass.mp4" poster="img/poster_firstclass.jpg" controls muted playsinline preload="none"></video><figcaption>Две локации одним роликом, переход и липсинк</figcaption></figure>
+    </div>
+  </section>
+
+  <section>
+    <div class="head">
+      <span class="label">Как я работаю</span>
+      <h2>Процесс</h2>
+    </div>
+    <ul class="plain">
+      <li>Разбираю товар и ЦА, смотрю карточки конкурентов и тренды категории.</li>
+      <li>Делаю базовый кадр: модель, образ, локация. Согласовываю его до серии.</li>
+      <li>Собираю серию ракурсов от одного базового кадра, чтобы вещь и модель совпадали во всех кадрах.</li>
+      <li>Проверяю детали вещи один в один: фактуру, швы, фурнитуру, посадку. Руки и лица смотрю крупно.</li>
+      <li>По запросу делаю короткие видео для карточки и Reels и варианты главного фото для A/B-тестов CTR.</li>
+    </ul>
+  </section>
+
+  <footer class="contact">
+    <span class="label">Связаться</span>
+    <h2>Готова выполнить тестовое задание на вашем товаре</h2>
+    <p class="val">Telegram: <a href="https://t.me/poolina_g" style="color:inherit">@poolina_g</a></p>
+  </footer>
+
+</div>
+
+</body>
+</html>
