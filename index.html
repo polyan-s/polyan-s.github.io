@@ -3,11 +3,12 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>AI-фотосессии одежды</title>
+<title>Полина Глухова — AI-креатор</title>
+<meta name="description" content="AI-инфлюенсер с нуля, карточки Wildberries по одному фото товара, Reels и фешн-серии на нейросетях. Портфолио Полины Глуховой.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Manrope:wght@400;500;600&family=JetBrains+Mono:wght@400&display=swap">
 <style>
-/* Layout: contact-sheet editorial — narrow text column, wide image grids, case studies as numbered steps from product photo to finished frames */
+/* Layout: contact-sheet editorial — narrow text column, wide image grids, case studies as numbered steps */
 :root{
   --bg:#f3f1ee; --surface:#e8e4de; --fg:#1b1a19; --muted:#6c6762; --line:#d3cdc5; --accent:#8a3b2e;
   --display:"Fraunces", Georgia, serif; --body:"Manrope", system-ui, sans-serif; --mono:"JetBrains Mono", ui-monospace, monospace;
@@ -17,22 +18,28 @@
 *{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--body);font-size:16px;line-height:1.6;padding-inline:clamp(16px,4vw,48px);padding-block:40px 80px}
 .wrap{max-width:1180px;margin:0 auto;display:grid;gap:88px}
-h1,h2{font-family:var(--display);font-weight:600;text-wrap:balance;margin:0;letter-spacing:-0.01em}
+h1,h2,h3{font-family:var(--display);font-weight:600;text-wrap:balance;margin:0;letter-spacing:-0.01em}
 h1{font-size:clamp(34px,6vw,64px);line-height:1.05}
 h2{font-size:clamp(26px,3.6vw,38px);line-height:1.15}
+h3{font-size:20px;line-height:1.3}
 p{margin:0;max-width:62ch}
+a{color:inherit}
 .label{font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
 .hero{display:grid;gap:22px;border-bottom:1px solid var(--line);padding-bottom:48px}
 .hero .lead{font-size:19px;color:var(--fg)}
 .tags{display:flex;flex-wrap:wrap;gap:8px}
 .tag{font-size:13px;border:1px solid var(--line);border-radius:999px;padding:4px 12px;color:var(--muted)}
-section{display:grid;gap:28px}
+nav.toc{display:flex;flex-wrap:wrap;gap:6px 18px;font-size:14px}
+nav.toc a{text-decoration:none;color:var(--muted);border-bottom:1px solid var(--line)}
+nav.toc a:hover{color:var(--accent);border-color:var(--accent)}
+section{display:grid;gap:28px;scroll-margin-top:24px}
 .head{display:grid;gap:12px}
 .step{display:grid;grid-template-columns:minmax(0,260px) minmax(0,1fr);gap:28px;align-items:start}
 @media (max-width:760px){.step{grid-template-columns:1fr}}
 figure{margin:0;display:grid;gap:8px}
 figcaption{font-size:13px;color:var(--muted)}
 img,video{width:100%;max-width:100%;display:block;border-radius:4px;background:var(--surface)}
+video{aspect-ratio:9/16;object-fit:cover}
 .grid4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
 @media (max-width:760px){.grid4{grid-template-columns:repeat(2,minmax(0,1fr))}}
 .grid7{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:8px}
@@ -47,6 +54,16 @@ img,video{width:100%;max-width:100%;display:block;border-radius:4px;background:v
 ul.plain{margin:0;padding:0;list-style:none;display:grid;gap:10px;max-width:70ch}
 ul.plain li{padding-left:18px;position:relative}
 ul.plain li::before{content:"";position:absolute;left:0;top:.7em;width:8px;height:1px;background:var(--accent)}
+.facts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;max-width:760px}
+@media (max-width:600px){.facts{grid-template-columns:1fr}}
+.fact{border:1px solid var(--line);border-radius:6px;padding:14px 16px;display:grid;gap:4px;background:var(--surface)}
+.fact b{font-family:var(--display);font-weight:600;font-size:26px;line-height:1.1}
+.fact span{font-size:13px;color:var(--muted)}
+.cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+@media (max-width:760px){.cards{grid-template-columns:1fr}}
+.card{border:1px solid var(--line);border-radius:6px;padding:20px 22px;display:grid;gap:10px;background:var(--surface)}
+.card p{font-size:15px;color:var(--muted)}
+.card a.btn{justify-self:start;font-family:var(--mono);font-size:13px;text-decoration:none;border:1px solid var(--accent);color:var(--accent);border-radius:999px;padding:6px 14px}
 .contact{border-top:1px solid var(--line);padding-top:40px;display:grid;gap:14px}
 .contact .val{font-family:var(--mono);font-size:15px;color:var(--accent)}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
@@ -57,16 +74,72 @@ ul.plain li::before{content:"";position:absolute;left:0;top:.7em;width:8px;heigh
 <div class="wrap">
 
   <header class="hero">
-    <span class="label">Портфолио · AI-креатор / нейрофотограф</span>
-    <h1>AI-фотосессии одежды с нуля, по одному фото товара</h1>
-    <p class="lead">Делаю реалистичные съёмки на модели для карточек маркетплейсов, когда есть только фото вещи. Вещь переношу один в один, модель и локация остаются одними и теми же на всей серии, плюс короткие ролики для карточек и Reels.</p>
+    <span class="label">Портфолио · Полина Глухова · AI-креатор / нейрофотограф / Reels</span>
+    <h1>Контент для брендов на нейросетях: AI-персонаж, карточки маркетплейсов, Reels</h1>
+    <p class="lead">Веду собственного AI-инфлюенсера от идеи до публикаций, делаю фотосессии одежды по одному фото товара для карточек Wildberries и короткие видео под тренды. Почти 3 года инфографики для маркетплейсов и свой магазин на WB и Ozon — знаю, какая карточка продаёт.</p>
     <div class="tags">
-      <span class="tag">Nano Banana Pro</span><span class="tag">GPT Image</span><span class="tag">Midjourney</span>
-      <span class="tag">Seedance 2.5</span><span class="tag">Kling 3.0</span><span class="tag">Higgsfield</span><span class="tag">Sync.so (липсинк)</span>
+      <span class="tag">Higgsfield Soul / Cinema</span><span class="tag">Nano Banana Pro</span><span class="tag">GPT Image 2.5</span><span class="tag">Midjourney</span>
+      <span class="tag">Kling 3.0</span><span class="tag">Seedance 2.5</span><span class="tag">Genjutsu</span><span class="tag">ElevenLabs</span><span class="tag">Sync.so</span><span class="tag">Photoshop / Figma</span>
     </div>
+    <nav class="toc" aria-label="Разделы">
+      <a href="#sasha">AI-инфлюенсер</a><a href="#mud">Фешн-карусель</a><a href="#threads">Threads</a><a href="#wb">Карточка WB</a><a href="#info">Инфографика</a><a href="#lace">Фешн-серия</a><a href="#ab">A/B на 21 модели</a><a href="#video">Видео</a><a href="#text">Сценарии и разборы</a><a href="#process">Процесс</a>
+    </nav>
   </header>
 
-  <section>
+  <section id="sasha">
+    <div class="head">
+      <span class="label">Кейс · AI-инфлюенсер с нуля</span>
+      <h2>«Саша»: персонаж, который живёт на конюшне и каждый день выходит в Reels</h2>
+      <p>Придумала легенду (23 года, переехала из Москвы в деревню к своему коню), собрала эталон лица и гардероб, чтобы персонаж узнавался в каждом кадре. Каждый день разбираю трендовые Reels по кадрам и таймингам, повторяю их с Сашей: генерирую стоп-кадры, оживляю их, монтирую под звук и публикую. Фото, видео, озвучка, посты и тексты — всё делаю сама с помощью нейросетей.</p>
+    </div>
+    <div class="step">
+      <figure class="product">
+        <img src="img/sasha_avatar.jpg" alt="Аватар персонажа Саши: чёрные кудри, голубые глаза" loading="lazy">
+        <figcaption>Эталон персонажа: одно лицо и причёска во всех фото и видео</figcaption>
+      </figure>
+      <div class="facts">
+        <div class="fact"><b>8 000+</b><span>просмотров у первого ролика за два дня на новом аккаунте</span></div>
+        <div class="fact"><b>4–5</b><span>Reels в неделю плюс сторис и посты в Threads</span></div>
+        <div class="fact"><b>1 день</b><span>от трендового референса до готового ролика</span></div>
+      </div>
+    </div>
+    <div class="grid4">
+      <figure><video src="vid/sasha_obidelas.mp4" poster="img/poster_sasha_obidelas.jpg" controls muted playsinline preload="none"></video><figcaption>«Обиделась и ушла, он пошёл за мной» — 8 000+ просмотров за два дня</figcaption></figure>
+      <figure><video src="vid/sasha_ozzy.mp4" poster="img/poster_sasha_ozzy.jpg" controls muted playsinline preload="none"></video><figcaption>Лежит с конём на траве — повтор тренда с лошадью</figcaption></figure>
+      <figure><video src="vid/sasha_stickers.mp4" poster="img/poster_sasha_stickers.jpg" controls muted playsinline preload="none"></video><figcaption>Конь в стразах: крупные детали, руки, фактура</figcaption></figure>
+      <figure><video src="vid/sasha_ghost.mp4" poster="img/poster_sasha_ghost.jpg" controls muted playsinline preload="none"></video><figcaption>Конь-призрак: вирусный формат «фотосессия с питомцем»</figcaption></figure>
+      <figure><video src="vid/sasha_benzin.mp4" poster="img/poster_sasha_benzin.jpg" controls muted playsinline preload="none"></video><figcaption>«А если бензин кончится?» — две POV-сцены, склейка как в референсе</figcaption></figure>
+      <figure><video src="vid/sasha_crow.mp4" poster="img/poster_sasha_crow.jpg" controls muted playsinline preload="none"></video><figcaption>Сапоги в грязи под трендовый звук</figcaption></figure>
+      <figure><video src="vid/sasha_vlog3.mp4" poster="img/poster_sasha_vlog3.jpg" controls muted playsinline preload="none"></video><figcaption>Влог «осень на конюшне»: быстрые склейки, живые кадры «с телефона»</figcaption></figure>
+      <figure><video src="vid/sasha_utyuzhok.mp4" poster="img/poster_sasha_utyuzhok.jpg" controls muted playsinline preload="none"></video><figcaption>Влог «как у балерины»: утро, сборы, город — один персонаж в 12 локациях</figcaption></figure>
+    </div>
+    <p class="note">Ролики выглядят снятыми на телефон: без эффектов и боке, хук в первую секунду, русский текст на видео, длина 7–15 с. Так алгоритм показывает их русскоязычной аудитории.</p>
+  </section>
+
+  <section id="mud">
+    <div class="head">
+      <span class="label">Кейс · фешн-съёмка для карусели</span>
+      <h2>«Гламур переехал в деревню»: 8 кадров в одном стиле</h2>
+      <p>Один образ, одна локация, одна тональность. Контраст, на котором держится персонаж: каблуки и мех в грязи конюшни. Кадры сгенерированы отдельно, затем выровнены по цвету, свету и контрасту скриптом, чтобы карусель читалась как одна съёмка. Порядок собран под листание: лицо → общий план → деталь → конь → деталь → финал.</p>
+    </div>
+    <div class="grid4">
+      <img src="img/mud_01.jpg" alt="Саша сидит на корточках в грязи двора конюшни" loading="lazy"><img src="img/mud_02.jpg" alt="Общий план: маленькая фигура посреди грязного двора" loading="lazy"><img src="img/mud_03.jpg" alt="Туфли на шпильке, утонувшие в грязи" loading="lazy"><img src="img/mud_04.jpg" alt="Саша с конём, оглядывается через плечо" loading="lazy">
+      <img src="img/mud_05.jpg" alt="Ноги в мятных колготках на тюке сена" loading="lazy"><img src="img/mud_06.jpg" alt="Снимает солому с меховой юбки" loading="lazy"><img src="img/mud_07.jpg" alt="Рука с кольцами на меховой юбке" loading="lazy"><img src="img/mud_08.jpg" alt="Саша верхом на коне у конюшни" loading="lazy">
+    </div>
+  </section>
+
+  <section id="threads">
+    <div class="head">
+      <span class="label">Кейс · тексты и макеты</span>
+      <h2>Threads: посты от лица персонажа</h2>
+      <p>Короткие тексты в голосе Саши и готовые макеты под публикацию. Тема одна — девушка из города на конюшне, но каждый пост цепляет по-своему: ожидание и реальность, деревенские наблюдения, самоирония.</p>
+    </div>
+    <div class="grid4">
+      <img src="img/threads_1.jpg" alt="Макет поста Threads 1" loading="lazy"><img src="img/threads_2.jpg" alt="Макет поста Threads 2" loading="lazy"><img src="img/threads_3.jpg" alt="Макет поста Threads 3" loading="lazy"><img src="img/threads_4.jpg" alt="Макет поста Threads 4" loading="lazy">
+    </div>
+  </section>
+
+  <section id="wb">
     <div class="head">
       <span class="label">Кейс WB · карточка товара по одному фото</span>
       <h2>Кардиган с косами: набор фото для карточки Wildberries</h2>
@@ -90,7 +163,7 @@ ul.plain li::before{content:"";position:absolute;left:0;top:.7em;width:8px;heigh
     </div>
   </section>
 
-  <section>
+  <section id="info">
     <div class="head">
       <span class="label">Кейс WB · инфографика</span>
       <h2>Тот же кардиган: 5 слайдов инфографики для карточки</h2>
@@ -105,9 +178,9 @@ ul.plain li::before{content:"";position:absolute;left:0;top:.7em;width:8px;heigh
     </div>
   </section>
 
-  <section>
+  <section id="lace">
     <div class="head">
-      <span class="label">Кейс 1 · одна вещь → серия из 8 кадров</span>
+      <span class="label">Кейс · одна вещь → серия из 8 кадров</span>
       <h2>Шёлковый топ с кружевом: от фото товара до фешн-серии</h2>
       <p>Исходник — только фото топа на сайте бренда. Задача: собрать серию как для карточки и соцсетей, с одной моделью, одной локацией и точным кружевом в каждом кадре.</p>
     </div>
@@ -134,9 +207,9 @@ ul.plain li::before{content:"";position:absolute;left:0;top:.7em;width:8px;heigh
     <p class="note">Проверяю каждый кадр крупно: кружево, бретели, руки и пальцы, лицо. Брак переделываю до сдачи.</p>
   </section>
 
-  <section>
+  <section id="ab">
     <div class="head">
-      <span class="label">Кейс 2 · одна вещь на 21 модели</span>
+      <span class="label">Кейс · одна вещь на 21 модели</span>
       <h2>Тот же образ на разных типажах для A/B-тестов карточки</h2>
       <p>Одна вещь, одна локация, одинаковый свет. Меняется только модель: блондинки, рыжие, брюнетки, разная фактура волос. Так можно проверять гипотезы CTR на главном фото, не пересобирая съёмку.</p>
     </div>
@@ -147,11 +220,11 @@ ul.plain li::before{content:"";position:absolute;left:0;top:.7em;width:8px;heigh
     </div>
   </section>
 
-  <section>
+  <section id="video">
     <div class="head">
-      <span class="label">Кейс 3 · короткие видео</span>
-      <h2>Ролики для карточек и Reels</h2>
-      <p>Видео с одной и той же моделью: переходы, смена образа, демонстрация волос и одежды в движении. Повторяю трендовые форматы по референсу, кадр за кадром.</p>
+      <span class="label">Кейс · короткие видео для карточек</span>
+      <h2>Ролики для карточек товаров и Reels бренда</h2>
+      <p>Видео с одной и той же моделью: переходы, смена образа, демонстрация волос и одежды в движении. Повторяю трендовые форматы по референсу, кадр за кадром, с липсинком и озвучкой.</p>
     </div>
     <div class="grid3">
       <figure><video src="vid/before_after.mp4" poster="img/poster_before_after.jpg" controls muted playsinline preload="none"></video><figcaption>До / после: переход «ладонями», смена образа, липсинк</figcaption></figure>
@@ -160,24 +233,46 @@ ul.plain li::before{content:"";position:absolute;left:0;top:.7em;width:8px;heigh
     </div>
   </section>
 
-  <section>
+  <section id="text">
+    <div class="head">
+      <span class="label">Сценарии и разборы</span>
+      <h2>Пишу сценарии Reels и разбираю, почему ролик залетает</h2>
+      <p>Два тестовых задания, выполненных для работодателей: разбор монтажа продающего ролика по секундам и сценарии Reels для эксперта с разбором вирусного референса.</p>
+    </div>
+    <div class="cards">
+      <div class="card">
+        <h3>Разбор монтажа продающего Reels</h3>
+        <p>Первая минута ролика по склейкам: где хук, зачем каждая смена кадра, где зритель уходит и как это исправить. Таблица таймингов и список правок.</p>
+        <a class="btn" href="https://docs.google.com/document/d/1-BcK2PkUnev9AG63XPaUCmkQRSk1iKD0dFl_s3-Rk_A/" target="_blank" rel="noopener">Открыть документ</a>
+      </div>
+      <div class="card">
+        <h3>Сценарии Reels и сторис для эксперта</h3>
+        <p>Два момента из прямого эфира, переписанных в сценарии на 30–45 секунд: хук, структура, текст на экране, призыв. Плюс разбор залетевшего Reels: почему смотрят до конца.</p>
+        <a class="btn" href="https://docs.google.com/document/d/1aT0ITsAYiUissn4Q_-hJhPeDqxdueJSOEao1pTy0i_I/" target="_blank" rel="noopener">Открыть документ</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="process">
     <div class="head">
       <span class="label">Как я работаю</span>
       <h2>Процесс</h2>
     </div>
     <ul class="plain">
-      <li>Разбираю товар и ЦА, смотрю карточки конкурентов и тренды категории.</li>
-      <li>Делаю базовый кадр: модель, образ, локация. Согласовываю его до серии.</li>
-      <li>Собираю серию ракурсов от одного базового кадра, чтобы вещь и модель совпадали во всех кадрах.</li>
-      <li>Проверяю детали вещи один в один: фактуру, швы, фурнитуру, посадку. Руки и лица смотрю крупно.</li>
-      <li>По запросу делаю короткие видео для карточки и Reels и варианты главного фото для A/B-тестов CTR.</li>
+      <li>Разбираю задачу, ЦА и конкурентов: карточки в выдаче, тренды категории или вирусные ролики в нише.</li>
+      <li>Делаю базовый кадр: модель или персонаж, образ, локация. Согласовываю его до серии.</li>
+      <li>Собираю серию от одного базового кадра, чтобы вещь и лицо совпадали во всех ракурсах и видео.</li>
+      <li>Проверяю детали вещи один в один: фактуру, швы, фурнитуру, посадку. Руки и лица смотрю крупно, брак переделываю.</li>
+      <li>Для видео: раскадровка по таймингам референса, генерация клипов, монтаж под звук, текст на экране, озвучка и липсинк.</li>
+      <li>Отдаю в форматах площадки: WB 900×1200, Reels 1080×1920, карусели, обложки. Для карточек предлагаю варианты главного фото под A/B-тест CTR.</li>
     </ul>
   </section>
 
   <footer class="contact">
     <span class="label">Связаться</span>
-    <h2>Готова выполнить тестовое задание на вашем товаре</h2>
-    <p class="val">Telegram: <a href="https://t.me/poolina_g" style="color:inherit">@poolina_g</a></p>
+    <h2>Готова выполнить тестовое задание на вашем товаре или нише</h2>
+    <p class="val">Telegram: <a href="https://t.me/poolina_g">@poolina_g</a> · Почта: <a href="mailto:polya.glushko@gmail.com">polya.glushko@gmail.com</a></p>
+    <p style="color:var(--muted);font-size:14px">Полина Глухова · Ижевск, работаю удалённо · самозанятая</p>
   </footer>
 
 </div>
