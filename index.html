@@ -8,39 +8,57 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Manrope:wght@400;500;600&family=JetBrains+Mono:wght@400&display=swap">
 <style>
-/* Layout: contact-sheet editorial — narrow text column, wide image grids, case studies as numbered steps */
+/* Layout: editorial portfolio — warm paper, deep red accent, dark band for the hero case, rounded media with hover */
 :root{
-  --bg:#f3f1ee; --surface:#e8e4de; --fg:#1b1a19; --muted:#6c6762; --line:#d3cdc5; --accent:#8a3b2e;
+  --bg:#f4f0ea; --surface:#ebe5dc; --card:#fffdf9; --fg:#1c1917; --muted:#6f6760; --line:#ddd4c8; --accent:#9a3b2b; --accent2:#c7623f;
+  --dark:#171412; --dark2:#231e1b; --onDark:#f1ebe3; --onDarkMuted:#a79d93;
   --display:"Fraunces", Georgia, serif; --body:"Manrope", system-ui, sans-serif; --mono:"JetBrains Mono", ui-monospace, monospace;
+  --r:14px; --shadow:0 10px 30px rgba(40,25,15,.10);
 }
-@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#161514;--surface:#211f1d;--fg:#ece8e2;--muted:#9c958d;--line:#34302c;--accent:#d98a74;color-scheme:dark}}
-:root[data-theme="dark"]{--bg:#161514;--surface:#211f1d;--fg:#ece8e2;--muted:#9c958d;--line:#34302c;--accent:#d98a74;color-scheme:dark}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#141211;--surface:#1f1b18;--card:#201c19;--fg:#efe9e1;--muted:#a1988f;--line:#36302b;--accent:#e08a6c;--accent2:#e9a98f;--dark:#0e0c0b;--dark2:#181412;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#141211;--surface:#1f1b18;--card:#201c19;--fg:#efe9e1;--muted:#a1988f;--line:#36302b;--accent:#e08a6c;--accent2:#e9a98f;--dark:#0e0c0b;--dark2:#181412;color-scheme:dark}
 *{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--body);font-size:16px;line-height:1.6;padding-inline:clamp(16px,4vw,48px);padding-block:40px 80px}
-.wrap{max-width:1180px;margin:0 auto;display:grid;gap:88px}
-h1,h2,h3{font-family:var(--display);font-weight:600;text-wrap:balance;margin:0;letter-spacing:-0.01em}
-h1{font-size:clamp(34px,6vw,64px);line-height:1.05}
-h2{font-size:clamp(26px,3.6vw,38px);line-height:1.15}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--body);font-size:16px;line-height:1.6;padding-inline:clamp(16px,4vw,48px);padding-block:0 80px}
+.wrap{max-width:1180px;margin:0 auto;display:grid;gap:96px}
+h1,h2,h3{font-family:var(--display);font-weight:600;text-wrap:balance;margin:0;letter-spacing:-0.015em}
+h1{font-size:clamp(34px,4.6vw,56px);line-height:1.04}
+h2{font-size:clamp(26px,3.4vw,40px);line-height:1.12}
 h3{font-size:20px;line-height:1.3}
 p{margin:0;max-width:62ch}
 a{color:inherit}
-.label{font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
-.hero{display:grid;gap:22px;border-bottom:1px solid var(--line);padding-bottom:48px}
+.label{font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--accent)}
+/* sticky nav */
+nav.toc{position:sticky;top:0;z-index:20;display:flex;flex-wrap:wrap;gap:4px 14px;font-size:13px;padding:12px 0;margin-inline:calc(50% - 50vw);padding-inline:clamp(16px,4vw,48px);background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+nav.toc a{text-decoration:none;color:var(--muted);padding:4px 10px;border-radius:999px;border:1px solid transparent}
+nav.toc a:hover{color:var(--accent);border-color:var(--line);background:var(--card)}
+/* hero */
+.hero{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:40px;align-items:center;padding-top:56px}
+@media (max-width:860px){.hero{grid-template-columns:1fr}}
+.hero .copy{display:grid;gap:22px}
 .hero .lead{font-size:19px;color:var(--fg)}
+.hero .cta{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-block;text-decoration:none;font-weight:600;font-size:14px;padding:12px 20px;border-radius:999px;background:var(--accent);color:#fff}
+.btn.ghost{background:transparent;color:var(--fg);border:1px solid var(--line)}
+.collage{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;align-items:end}
+.collage img{aspect-ratio:3/4;object-fit:cover;border-radius:var(--r);box-shadow:var(--shadow)}
+.collage img:nth-child(1){transform:translateY(26px) rotate(-2deg)}
+.collage img:nth-child(2){transform:translateY(-14px)}
+.collage img:nth-child(3){transform:translateY(18px) rotate(2deg)}
 .tags{display:flex;flex-wrap:wrap;gap:8px}
-.tag{font-size:13px;border:1px solid var(--line);border-radius:999px;padding:4px 12px;color:var(--muted)}
-nav.toc{display:flex;flex-wrap:wrap;gap:6px 18px;font-size:14px}
-nav.toc a{text-decoration:none;color:var(--muted);border-bottom:1px solid var(--line)}
-nav.toc a:hover{color:var(--accent);border-color:var(--accent)}
-section{display:grid;gap:28px;scroll-margin-top:24px}
+.tag{font-size:13px;border:1px solid var(--line);border-radius:999px;padding:5px 12px;color:var(--muted);background:var(--card)}
+/* sections */
+section{display:grid;gap:30px;scroll-margin-top:72px}
 .head{display:grid;gap:12px}
 .step{display:grid;grid-template-columns:minmax(0,260px) minmax(0,1fr);gap:28px;align-items:start}
 @media (max-width:760px){.step{grid-template-columns:1fr}}
 figure{margin:0;display:grid;gap:8px}
 figcaption{font-size:13px;color:var(--muted)}
-img,video{width:100%;max-width:100%;display:block;border-radius:4px;background:var(--surface)}
+img,video{width:100%;max-width:100%;display:block;border-radius:var(--r);background:var(--surface);transition:transform .35s ease, box-shadow .35s ease}
+figure:hover img,figure:hover video,.grid7 img:hover,.collage img:hover{transform:translateY(-3px);box-shadow:var(--shadow)}
+.collage img:hover{transform:translateY(-6px) rotate(0)}
 video{aspect-ratio:9/16;object-fit:cover}
-.grid4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.grid4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
 @media (max-width:760px){.grid4{grid-template-columns:repeat(2,minmax(0,1fr))}}
 .grid7{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:8px}
 @media (max-width:900px){.grid7{grid-template-columns:repeat(4,minmax(0,1fr))}}
@@ -49,21 +67,33 @@ video{aspect-ratio:9/16;object-fit:cover}
 @media (max-width:900px){.grid5{grid-template-columns:repeat(2,minmax(0,1fr))}}
 .grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
 @media (max-width:760px){.grid3{grid-template-columns:1fr}}
-.product{border:1px solid var(--line);padding:12px;border-radius:6px;background:var(--surface)}
-.note{border-left:2px solid var(--accent);padding-left:16px;color:var(--muted);font-size:15px;max-width:70ch}
-ul.plain{margin:0;padding:0;list-style:none;display:grid;gap:10px;max-width:70ch}
-ul.plain li{padding-left:18px;position:relative}
-ul.plain li::before{content:"";position:absolute;left:0;top:.7em;width:8px;height:1px;background:var(--accent)}
+.product{border:1px solid var(--line);padding:12px;border-radius:var(--r);background:var(--card)}
+.note{border-left:3px solid var(--accent);padding:10px 16px;color:var(--muted);font-size:15px;max-width:70ch;background:var(--card);border-radius:0 var(--r) var(--r) 0}
+ul.plain{margin:0;padding:0;list-style:none;display:grid;gap:12px;max-width:70ch;counter-reset:n}
+ul.plain li{padding-left:44px;position:relative;counter-increment:n}
+ul.plain li::before{content:counter(n,decimal-leading-zero);position:absolute;left:0;top:.1em;font-family:var(--mono);font-size:13px;color:var(--accent)}
 .facts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;max-width:760px}
 @media (max-width:600px){.facts{grid-template-columns:1fr}}
-.fact{border:1px solid var(--line);border-radius:6px;padding:14px 16px;display:grid;gap:4px;background:var(--surface)}
-.fact b{font-family:var(--display);font-weight:600;font-size:26px;line-height:1.1}
+.fact{border:1px solid var(--line);border-radius:var(--r);padding:16px 18px;display:grid;gap:4px;background:var(--card)}
+.fact b{font-family:var(--display);font-weight:600;font-size:30px;line-height:1.05;color:var(--accent)}
 .fact span{font-size:13px;color:var(--muted)}
 .cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
 @media (max-width:760px){.cards{grid-template-columns:1fr}}
-.card{border:1px solid var(--line);border-radius:6px;padding:20px 22px;display:grid;gap:10px;background:var(--surface)}
+.card{border:1px solid var(--line);border-radius:var(--r);padding:22px 24px;display:grid;gap:10px;background:var(--card)}
 .card p{font-size:15px;color:var(--muted)}
-.card a.btn{justify-self:start;font-family:var(--mono);font-size:13px;text-decoration:none;border:1px solid var(--accent);color:var(--accent);border-radius:999px;padding:6px 14px}
+.card a.btn{justify-self:start;font-family:var(--mono);font-size:13px;padding:8px 16px}
+/* dark band */
+.band{margin-inline:calc(50% - 50vw);padding-inline:clamp(16px,4vw,48px);padding-block:72px;background:var(--dark);color:var(--onDark);border-radius:0}
+.band .inner{max-width:1180px;margin:0 auto;display:grid;gap:30px}
+.band p,.band figcaption{color:var(--onDarkMuted)}
+.band .lead,.band h2{color:var(--onDark)}
+.band .fact{background:var(--dark2);border-color:#3a322d}
+.band .fact b{color:#f0a98b}
+.band .fact span{color:var(--onDarkMuted)}
+.band .product{background:var(--dark2);border-color:#3a322d}
+.band .note{background:var(--dark2);color:var(--onDarkMuted);border-color:#f0a98b}
+.band a{color:#f0a98b}
+.band img,.band video{background:var(--dark2)}
 .contact{border-top:1px solid var(--line);padding-top:40px;display:grid;gap:14px}
 .contact .val{font-family:var(--mono);font-size:15px;color:var(--accent)}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
@@ -73,20 +103,30 @@ ul.plain li::before{content:"";position:absolute;left:0;top:.7em;width:8px;heigh
 
 <div class="wrap">
 
+  <nav class="toc" aria-label="Разделы">
+      <a href="#sasha">AI-инфлюенсер</a><a href="#mud">Карусель</a><a href="#threads">Threads</a><a href="#dress">Платье</a><a href="#home">Свеча</a><a href="#beauty">Крем</a><a href="#ugc">UGC</a><a href="#wb">Кардиган</a><a href="#lace">Фешн-серия</a><a href="#ab">A/B</a><a href="#text">Сценарии</a><a href="#contact">Контакты</a>
+  </nav>
+
   <header class="hero">
-    <span class="label">Портфолио · Полина Глухова · AI-креатор / нейрофотограф / Reels</span>
-    <h1>Контент для брендов на нейросетях: AI-персонаж, карточки маркетплейсов, Reels</h1>
-    <p class="lead">Веду собственного AI-инфлюенсера от идеи до публикаций, делаю фотосессии одежды по одному фото товара для карточек Wildberries и короткие видео под тренды. Почти 3 года инфографики для маркетплейсов и свой магазин на WB и Ozon — знаю, какая карточка продаёт.</p>
-    <div class="tags">
-      <span class="tag">Higgsfield Soul / Cinema</span><span class="tag">Nano Banana Pro</span><span class="tag">GPT Image 2.5</span><span class="tag">Midjourney</span>
-      <span class="tag">Kling 3.0</span><span class="tag">Seedance 2.5</span><span class="tag">Genjutsu</span><span class="tag">ElevenLabs</span><span class="tag">Sync.so</span><span class="tag">Photoshop / Figma</span>
+    <div class="copy">
+      <span class="label">Портфолио · Полина Глухова · AI-креатор / нейрофотограф / Reels</span>
+      <h1>Контент для брендов на нейросетях: AI-персонаж, карточки маркетплейсов, Reels</h1>
+      <p class="lead">Веду собственного AI-инфлюенсера от идеи до публикаций, делаю фотосессии одежды по одному фото товара для карточек Wildberries и короткие видео под тренды. Почти 3 года инфографики для маркетплейсов и свой магазин на WB и Ozon — знаю, какая карточка продаёт.</p>
+      <div class="cta"><a class="btn" href="#sasha">Смотреть кейсы</a><a class="btn ghost" href="https://t.me/poolina_g">Написать в Telegram</a></div>
+      <div class="tags">
+        <span class="tag">Higgsfield Soul / Cinema</span><span class="tag">Nano Banana Pro</span><span class="tag">GPT Image 2.5</span><span class="tag">Midjourney</span>
+        <span class="tag">Kling 3.0</span><span class="tag">Seedance 2.5</span><span class="tag">Genjutsu</span><span class="tag">ElevenLabs</span><span class="tag">Photoshop / Figma</span>
+      </div>
     </div>
-    <nav class="toc" aria-label="Разделы">
-      <a href="#sasha">AI-инфлюенсер</a><a href="#mud">Фешн-карусель</a><a href="#threads">Threads</a><a href="#dress">Платье WB</a><a href="#home">Свеча</a><a href="#beauty">Крем</a><a href="#ugc">UGC</a><a href="#wb">Кардиган WB</a><a href="#info">Инфографика</a><a href="#lace">Фешн-серия</a><a href="#ab">A/B на 21 модели</a><a href="#video">Видео</a><a href="#text">Сценарии и разборы</a><a href="#process">Процесс</a>
-    </nav>
+    <div class="collage" aria-hidden="true">
+      <img src="img/mud_01.jpg" alt="" loading="eager">
+      <img src="img/dress_main.jpg" alt="" loading="eager">
+      <img src="img/poster_sasha_obidelas.jpg" alt="" loading="eager">
+    </div>
   </header>
 
-  <section id="sasha">
+  <section id="sasha" class="band">
+   <div class="inner">
     <div class="head">
       <span class="label">Кейс · AI-инфлюенсер с нуля</span>
       <h2>«Саша»: персонаж, который живёт на конюшне и каждый день выходит в Reels</h2>
@@ -115,6 +155,7 @@ ul.plain li::before{content:"";position:absolute;left:0;top:.7em;width:8px;heigh
       <figure><video src="vid/sasha_vlog3.mp4" poster="img/poster_sasha_vlog3.jpg" controls muted playsinline preload="none"></video><figcaption>Влог «осень на конюшне»: быстрые склейки, живые кадры «с телефона»</figcaption></figure>
     </div>
     <p class="note">Ролики выглядят снятыми на телефон: без эффектов и боке, хук в первую секунду, русский текст на видео, длина 7–15 с. Так алгоритм показывает их русскоязычной аудитории.</p>
+     </div>
   </section>
 
   <section id="mud">
@@ -344,7 +385,7 @@ ul.plain li::before{content:"";position:absolute;left:0;top:.7em;width:8px;heigh
     </ul>
   </section>
 
-  <footer class="contact">
+  <footer class="contact" id="contact">
     <span class="label">Связаться</span>
     <h2>Готова выполнить тестовое задание на вашем товаре или нише</h2>
     <p class="val">Telegram: <a href="https://t.me/poolina_g">@poolina_g</a> · Почта: <a href="mailto:polya.glushko@gmail.com">polya.glushko@gmail.com</a></p>
