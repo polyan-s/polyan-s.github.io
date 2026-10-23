@@ -4,395 +4,257 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Полина Глухова — AI-креатор</title>
-<meta name="description" content="AI-инфлюенсер с нуля, карточки Wildberries по одному фото товара, Reels и фешн-серии на нейросетях. Портфолио Полины Глуховой.">
+<meta name="description" content="Нейрофотосессии и инфографика для карточек Wildberries по одному фото товара, сценарии Reels. Портфолио Полины Глуховой.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Manrope:wght@400;500;600&family=JetBrains+Mono:wght@400&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600&display=swap">
 <style>
-/* Layout: editorial portfolio — warm paper, deep red accent, dark band for the hero case, rounded media with hover */
+/* Layout: white gallery portfolio — fixed menu on the left, works in a tight grid on the right */
 :root{
-  --bg:#f4f0ea; --surface:#ebe5dc; --card:#fffdf9; --fg:#1c1917; --muted:#6f6760; --line:#ddd4c8; --accent:#9a3b2b; --accent2:#c7623f;
-  --dark:#171412; --dark2:#231e1b; --onDark:#f1ebe3; --onDarkMuted:#a79d93;
-  --display:"Fraunces", Georgia, serif; --body:"Manrope", system-ui, sans-serif; --mono:"JetBrains Mono", ui-monospace, monospace;
-  --r:14px; --shadow:0 10px 30px rgba(40,25,15,.10);
+  --bg:#ffffff; --fg:#151515; --muted:#8b8b8b; --line:#ececec; --mat:#f4f3f1;
+  --font:"Jost", "Futura", "Century Gothic", system-ui, sans-serif;
+  --side:250px; --gap:14px;
+  color-scheme:light;
 }
-@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#141211;--surface:#1f1b18;--card:#201c19;--fg:#efe9e1;--muted:#a1988f;--line:#36302b;--accent:#e08a6c;--accent2:#e9a98f;--dark:#0e0c0b;--dark2:#181412;color-scheme:dark}}
-:root[data-theme="dark"]{--bg:#141211;--surface:#1f1b18;--card:#201c19;--fg:#efe9e1;--muted:#a1988f;--line:#36302b;--accent:#e08a6c;--accent2:#e9a98f;--dark:#0e0c0b;--dark2:#181412;color-scheme:dark}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--body);font-size:16px;line-height:1.6;padding-inline:clamp(16px,4vw,48px);padding-block:0 80px}
-.wrap{max-width:1180px;margin:0 auto;display:grid;gap:96px}
-h1,h2,h3{font-family:var(--display);font-weight:600;text-wrap:balance;margin:0;letter-spacing:-0.015em}
-h1{font-size:clamp(32px,4vw,50px);line-height:1.06}
-h2{font-size:clamp(26px,3.4vw,40px);line-height:1.12}
-h3{font-size:20px;line-height:1.3}
-p{margin:0;max-width:62ch}
-a{color:inherit}
-.label{font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--accent)}
-/* sticky nav */
-nav.toc{position:sticky;top:0;z-index:20;display:flex;flex-wrap:wrap;gap:4px 14px;font-size:13px;padding:12px 0;margin-inline:calc(50% - 50vw);padding-inline:clamp(16px,4vw,48px);background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
-nav.toc a{text-decoration:none;color:var(--muted);padding:4px 10px;border-radius:999px;border:1px solid transparent}
-nav.toc a:hover{color:var(--accent);border-color:var(--line);background:var(--card)}
-/* hero */
-.hero{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,.75fr);gap:40px;align-items:center;padding-top:56px}
-@media (max-width:860px){.hero{grid-template-columns:1fr}}
-.hero .copy{display:grid;gap:22px}
-.hero .lead{font-size:19px;color:var(--fg)}
-.hero .cta{display:flex;gap:12px;flex-wrap:wrap}
-.btn{display:inline-block;text-decoration:none;font-weight:600;font-size:14px;padding:12px 20px;border-radius:999px;background:var(--accent);color:#fff}
-.btn.ghost{background:transparent;color:var(--fg);border:1px solid var(--line)}
-.collage{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;align-items:end}
-.collage img{aspect-ratio:3/4;object-fit:cover;border-radius:var(--r);box-shadow:var(--shadow)}
-.collage img:nth-child(1){transform:translateY(26px) rotate(-2deg)}
-.collage img:nth-child(2){transform:translateY(-14px)}
-.collage img:nth-child(3){transform:translateY(18px) rotate(2deg)}
-.tags{display:flex;flex-wrap:wrap;gap:8px}
-.tag{font-size:13px;border:1px solid var(--line);border-radius:999px;padding:5px 12px;color:var(--muted);background:var(--card)}
-/* sections */
-section{display:grid;gap:30px;scroll-margin-top:72px}
-.head{display:grid;gap:12px}
-.step{display:grid;grid-template-columns:minmax(0,260px) minmax(0,1fr);gap:28px;align-items:start}
-@media (max-width:760px){.step{grid-template-columns:1fr}}
-figure{margin:0;display:grid;gap:8px}
-figcaption{font-size:13px;color:var(--muted)}
-img,video{width:100%;max-width:100%;display:block;border-radius:var(--r);background:var(--surface);transition:transform .35s ease, box-shadow .35s ease}
-figure:hover img,figure:hover video,.grid7 img:hover,.collage img:hover{transform:translateY(-3px);box-shadow:var(--shadow)}
-.collage img:hover{transform:translateY(-6px) rotate(0)}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--font);font-size:15px;line-height:1.6;font-weight:400}
+a{color:inherit;text-decoration:none}
+img,video{display:block;width:100%;max-width:100%;background:var(--mat)}
+p{margin:0}
+h1,h2{margin:0;font-weight:500;text-wrap:balance}
+
+/* sidebar */
+.side{position:fixed;inset:0 auto 0 0;width:var(--side);padding:44px 28px 32px 36px;display:flex;flex-direction:column;gap:34px;overflow-y:auto}
+.name{font-weight:600;font-size:23px;line-height:1.05;letter-spacing:.03em;text-transform:uppercase}
+.role{margin-top:12px;font-size:13px;line-height:1.5;color:var(--muted);max-width:22ch}
+.menu{display:grid;gap:7px}
+.menu a,.small{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.menu a:hover,.menu a.on{color:var(--fg)}
+.side .foot{margin-top:auto;display:grid;gap:6px;font-size:13px}
+.side .foot a{border-bottom:1px solid var(--line);justify-self:start}
+.side .foot a:hover{border-color:var(--fg)}
+.side .foot .small{letter-spacing:.06em;font-size:11px}
+
+/* main */
+main{margin-left:var(--side);padding:44px clamp(16px,3.5vw,48px) 96px clamp(16px,2vw,24px);display:grid;gap:110px;max-width:calc(1240px + var(--side))}
+.intro{display:grid;gap:14px;padding-top:2px}
+.intro h1{font-size:clamp(22px,2.5vw,30px);line-height:1.3;max-width:30ch;font-weight:400}
+.intro p{color:var(--muted);max-width:58ch}
+
+section{display:grid;gap:26px;scroll-margin-top:32px}
+.head{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:24px;align-items:end}
+.head .txt{display:grid;gap:8px}
+.num{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.head h2{font-size:22px;line-height:1.3}
+.head p{color:var(--muted);max-width:62ch;font-size:14.5px}
+.src{width:150px;display:grid;gap:6px}
+.cap{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);line-height:1.4}
+
+.grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--gap)}
+.grid img{aspect-ratio:3/4;object-fit:cover}
+.grid .big{grid-column:span 2;grid-row:span 2}
+.grid .big img{height:100%}
+.row{display:grid;grid-template-columns:repeat(var(--n,5),minmax(0,1fr));gap:var(--gap)}
+.row img{aspect-ratio:3/4;object-fit:cover}
+.sub{display:grid;gap:12px}
+figure{margin:0;display:grid;gap:8px;align-content:start}
+figure img,figure video{transition:opacity .25s}
+figure:hover img{opacity:.9}
 video{aspect-ratio:9/16;object-fit:cover}
-.grid4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
-@media (max-width:760px){.grid4{grid-template-columns:repeat(2,minmax(0,1fr))}}
-.grid7{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:8px}
-@media (max-width:900px){.grid7{grid-template-columns:repeat(4,minmax(0,1fr))}}
-@media (max-width:480px){.grid7{grid-template-columns:repeat(3,minmax(0,1fr))}}
-.grid5{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px}
-@media (max-width:900px){.grid5{grid-template-columns:repeat(2,minmax(0,1fr))}}
-.grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
-@media (max-width:760px){.grid3{grid-template-columns:1fr}}
-.product{border:1px solid var(--line);padding:12px;border-radius:var(--r);background:var(--card)}
-.note{border-left:3px solid var(--accent);padding:10px 16px;color:var(--muted);font-size:15px;max-width:70ch;background:var(--card);border-radius:0 var(--r) var(--r) 0}
-ul.plain{margin:0;padding:0;list-style:none;display:grid;gap:12px;max-width:70ch;counter-reset:n}
-ul.plain li{padding-left:44px;position:relative;counter-increment:n}
-ul.plain li::before{content:counter(n,decimal-leading-zero);position:absolute;left:0;top:.1em;font-family:var(--mono);font-size:13px;color:var(--accent)}
-.facts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;max-width:760px}
-@media (max-width:600px){.facts{grid-template-columns:1fr}}
-.fact{border:1px solid var(--line);border-radius:var(--r);padding:16px 18px;display:grid;gap:4px;background:var(--card)}
-.fact b{font-family:var(--display);font-weight:600;font-size:30px;line-height:1.05;color:var(--accent)}
-.fact span{font-size:13px;color:var(--muted)}
-.cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
-@media (max-width:760px){.cards{grid-template-columns:1fr}}
-.card{border:1px solid var(--line);border-radius:var(--r);padding:22px 24px;display:grid;gap:10px;background:var(--card)}
-.card p{font-size:15px;color:var(--muted)}
-.card a.btn{justify-self:start;font-family:var(--mono);font-size:13px;padding:8px 16px}
-/* dark band */
-.band{margin-inline:calc(50% - 50vw);padding-inline:clamp(16px,4vw,48px);padding-block:72px;background:var(--dark);color:var(--onDark);border-radius:0}
-.band .inner{max-width:1180px;margin:0 auto;display:grid;gap:30px}
-.band p,.band figcaption{color:var(--onDarkMuted)}
-.band .lead,.band h2{color:var(--onDark)}
-.band .fact{background:var(--dark2);border-color:#3a322d}
-.band .fact b{color:#f0a98b}
-.band .fact span{color:var(--onDarkMuted)}
-.band .product{background:var(--dark2);border-color:#3a322d}
-.band .note{background:var(--dark2);color:var(--onDarkMuted);border-color:#f0a98b}
-.band a{color:#f0a98b}
-.band img,.band video{background:var(--dark2)}
-.contact{border-top:1px solid var(--line);padding-top:40px;display:grid;gap:14px}
-.contact .val{font-family:var(--mono);font-size:15px;color:var(--accent)}
-@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+
+.grid.g3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.num.sub{margin-top:18px}
+.vblock{display:grid;grid-template-columns:minmax(0,300px) minmax(0,1fr);gap:28px;align-items:end}
+.vblock video{aspect-ratio:3/4}
+.vblock p{color:var(--muted);max-width:52ch;font-size:14.5px}
+.sasha-av{width:64px;height:64px;border-radius:50%;object-fit:cover}
+.links{display:grid;gap:10px;max-width:640px}
+.links a{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:16px;padding:14px 0;border-bottom:1px solid var(--line)}
+.links a span:last-child{color:var(--muted);font-size:13px}
+.links a:hover span:first-child{text-decoration:underline;text-underline-offset:3px}
+.about{display:grid;gap:14px;max-width:64ch}
+.about p{color:var(--muted)}
+.about .contacts{color:var(--fg);font-size:16px}
+.about .contacts a{border-bottom:1px solid var(--line)}
+
+@media (max-width:900px){
+  .side{position:static;width:auto;padding:28px 16px 0;gap:18px}
+  .menu{display:flex;flex-wrap:wrap;gap:6px 16px}
+  .side .foot{display:none}
+  main{margin-left:0;padding:36px 16px 72px;gap:80px}
+  .grid,.grid.g3{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .vblock{grid-template-columns:1fr}
+  .vblock figure{max-width:300px}
+  .row{grid-template-columns:none;grid-auto-flow:column;grid-auto-columns:42%;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:6px}
+  .row > *{scroll-snap-align:start}
+  .head{grid-template-columns:1fr}
+  .src{width:120px}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
 </style>
 </head>
 <body>
 
-<div class="wrap">
-
-  <nav class="toc" aria-label="Разделы">
-      <a href="#sasha">AI-инфлюенсер</a><a href="#mud">Карусель</a><a href="#threads">Threads</a><a href="#dress">Платье</a><a href="#home">Свеча</a><a href="#beauty">Крем</a><a href="#ugc">UGC</a><a href="#wb">Кардиган</a><a href="#lace">Фешн-серия</a><a href="#ab">A/B</a><a href="#text">Сценарии</a><a href="#contact">Контакты</a>
+<aside class="side">
+  <div>
+    <div class="name">Полина<br>Глухова</div>
+    <p class="role">AI-креатор: нейрофотосессии, инфографика, видео для карточек</p>
+  </div>
+  <nav class="menu" aria-label="Разделы">
+    <a href="#polo">Платье-поло</a>
+    <a href="#cream">Крем</a>
+    <a href="#men">Мужской джемпер</a>
+    <a href="#text">Сценарии</a>
+    <a href="#about">Обо мне</a>
   </nav>
+  <div class="foot">
+    <a href="https://t.me/poolina_g">Telegram @poolina_g</a>
+    <a href="mailto:polya.glushko@gmail.com">polya.glushko@gmail.com</a>
+    <span class="small">Ижевск · удалённо</span>
+  </div>
+</aside>
 
-  <header class="hero">
-    <div class="copy">
-      <span class="label">Портфолио · Полина Глухова · AI-креатор / нейрофотограф / Reels</span>
-      <h1>Контент для брендов на нейросетях: AI-персонаж, карточки маркетплейсов, Reels</h1>
-      <p class="lead">Веду собственного AI-инфлюенсера от идеи до публикаций, делаю фотосессии одежды по одному фото товара для карточек Wildberries и короткие видео под тренды. Почти 3 года инфографики для маркетплейсов и свой магазин на WB и Ozon — знаю, какая карточка продаёт.</p>
-      <div class="cta"><a class="btn" href="#sasha">Смотреть кейсы</a><a class="btn ghost" href="https://t.me/poolina_g">Написать в Telegram</a></div>
-      <div class="tags">
-        <span class="tag">Higgsfield Soul / Cinema</span><span class="tag">Nano Banana Pro</span><span class="tag">GPT Image 2.5</span><span class="tag">Midjourney</span>
-        <span class="tag">Kling 3.0</span><span class="tag">Seedance 2.5</span><span class="tag">Genjutsu</span><span class="tag">ElevenLabs</span><span class="tag">Photoshop / Figma</span>
-      </div>
-    </div>
-    <div class="collage" aria-hidden="true">
-      <img src="img/mud_01.jpg" alt="" loading="eager">
-      <img src="img/dress_main.jpg" alt="" loading="eager">
-      <img src="img/poster_sasha_obidelas.jpg" alt="" loading="eager">
-    </div>
+<main>
+
+  <header class="intro">
+    <h1>Делаю фотосессии, инфографику и видео для карточек WB по одному фото товара и пишу сценарии Reels.</h1>
+    <p>Почти 3 года делала инфографику для маркетплейсов и вела свой магазин на WB и Ozon — знаю, какая карточка продаёт.</p>
   </header>
 
-  <section id="sasha" class="band">
-   <div class="inner">
+  <section id="polo">
     <div class="head">
-      <span class="label">Кейс · AI-инфлюенсер с нуля</span>
-      <h2>«Саша»: персонаж, который живёт на конюшне и каждый день выходит в Reels</h2>
-      <p>Придумала легенду (23 года, переехала из Москвы в деревню к своему коню), собрала эталон лица и гардероб, чтобы персонаж узнавался в каждом кадре. Каждый день разбираю трендовые Reels по кадрам и таймингам, повторяю их с Сашей: генерирую стоп-кадры, оживляю их, монтирую под звук и публикую. Фото, видео, озвучка, посты и тексты — всё делаю сама с помощью нейросетей.</p>
-    </div>
-    <div class="step">
-      <figure class="product">
-        <img src="img/sasha_avatar.jpg" alt="Аватар персонажа Саши: чёрные кудри, голубые глаза" loading="lazy">
-        <figcaption>Эталон персонажа: одно лицо и причёска во всех фото и видео</figcaption>
-      </figure>
-      <div class="facts">
-        <div class="fact"><b>8 300+</b><span>просмотров у лучшего ролика за три дня на новом аккаунте</span></div>
-        <div class="fact"><b>15 Reels</b><span>за первые 10 дней, суммарно 15 000+ просмотров</span></div>
-        <div class="fact"><b>1 день</b><span>от трендового референса до готового ролика</span></div>
+      <div class="txt">
+        <span class="num">01 — Одежда · фото, инфографика, видео</span>
+        <h2>Платье-поло: из одного фото селлера — студийная съёмка</h2>
+        <p>Одна локация и одна модель, как у брендов на WB: главный кадр, спина, сидя, в движении, крупно лицо и детали, низ с обувью, раскладка. Цвет, рубчик, воротник и пуговицы совпадают с товаром.</p>
       </div>
-    </div>
-    <p>Аккаунт: <a href="https://www.instagram.com/sasha.notalex/" target="_blank" rel="noopener">instagram.com/sasha.notalex</a>. Ниже ролики по убыванию просмотров на 20 октября 2026.</p>
-    <div class="grid4">
-      <figure><video src="vid/sasha_obidelas.mp4" poster="img/poster_sasha_obidelas.jpg" controls muted playsinline preload="none"></video><figcaption>8 300 просмотров · «Обиделась и ушла, он пошёл за мной»</figcaption></figure>
-      <figure><video src="vid/sasha_benzin.mp4" poster="img/poster_sasha_benzin.jpg" controls muted playsinline preload="none"></video><figcaption>1 700 просмотров за сутки · «Мой транспорт на овсе и не глохнет» — две POV-сцены</figcaption></figure>
-      <figure><video src="vid/sasha_1010.mp4" poster="img/poster_sasha_1010.jpg" controls muted playsinline preload="none"></video><figcaption>1 600 просмотров · «Или не 10/10?» — юмор про отношения</figcaption></figure>
-      <figure><video src="vid/sasha_ghost.mp4" poster="img/poster_sasha_ghost.jpg" controls muted playsinline preload="none"></video><figcaption>1 350 просмотров · Конь-призрак: формат «фотосессия с питомцем»</figcaption></figure>
-      <figure><video src="vid/sasha_shopping.mp4" poster="img/poster_sasha_shopping.jpg" controls muted playsinline preload="none"></video><figcaption>850 просмотров · «😭 #шопинг» — короткая смешная сценка</figcaption></figure>
-      <figure><video src="vid/sasha_ozzy.mp4" poster="img/poster_sasha_ozzy.jpg" controls muted playsinline preload="none"></video><figcaption>Лежит с конём на траве — «отдых это не море, а он»</figcaption></figure>
-      <figure><video src="vid/sasha_stickers.mp4" poster="img/poster_sasha_stickers.jpg" controls muted playsinline preload="none"></video><figcaption>Конь в стразах: крупные детали, руки, фактура</figcaption></figure>
-      <figure><video src="vid/sasha_vlog3.mp4" poster="img/poster_sasha_vlog3.jpg" controls muted playsinline preload="none"></video><figcaption>Влог «осень на конюшне»: быстрые склейки, живые кадры «с телефона»</figcaption></figure>
-    </div>
-    <p class="note">Ролики выглядят снятыми на телефон: без эффектов и боке, хук в первую секунду, русский текст на видео, длина 7–15 с. Так алгоритм показывает их русскоязычной аудитории.</p>
-     </div>
-  </section>
-
-  <section id="mud">
-    <div class="head">
-      <span class="label">Кейс · фешн-съёмка для карусели</span>
-      <h2>«Гламур переехал в деревню»: 8 кадров в одном стиле</h2>
-      <p>Один образ, одна локация, одна тональность. Контраст, на котором держится персонаж: каблуки и мех в грязи конюшни. Кадры сгенерированы отдельно, затем выровнены по цвету, свету и контрасту скриптом, чтобы карусель читалась как одна съёмка. Порядок собран под листание: лицо → общий план → деталь → конь → деталь → финал.</p>
-    </div>
-    <div class="grid4">
-      <img src="img/mud_01.jpg" alt="Саша сидит на корточках в грязи двора конюшни" loading="lazy"><img src="img/mud_02.jpg" alt="Общий план: маленькая фигура посреди грязного двора" loading="lazy"><img src="img/mud_03.jpg" alt="Туфли на шпильке, утонувшие в грязи" loading="lazy"><img src="img/mud_04.jpg" alt="Саша с конём, оглядывается через плечо" loading="lazy">
-      <img src="img/mud_05.jpg" alt="Ноги в мятных колготках на тюке сена" loading="lazy"><img src="img/mud_06.jpg" alt="Снимает солому с меховой юбки" loading="lazy"><img src="img/mud_07.jpg" alt="Рука с кольцами на меховой юбке" loading="lazy"><img src="img/mud_08.jpg" alt="Саша верхом на коне у конюшни" loading="lazy">
-    </div>
-  </section>
-
-  <section id="threads">
-    <div class="head">
-      <span class="label">Кейс · тексты и макеты</span>
-      <h2>Threads: посты от лица персонажа</h2>
-      <p>Короткие тексты в голосе Саши и готовые макеты под публикацию. Тема одна — девушка из города на конюшне, но каждый пост цепляет по-своему: ожидание и реальность, деревенские наблюдения, самоирония.</p>
-    </div>
-    <div class="grid4">
-      <img src="img/threads_1.jpg" alt="Макет поста Threads 1" loading="lazy"><img src="img/threads_2.jpg" alt="Макет поста Threads 2" loading="lazy"><img src="img/threads_3.jpg" alt="Макет поста Threads 3" loading="lazy"><img src="img/threads_4.jpg" alt="Макет поста Threads 4" loading="lazy">
-    </div>
-  </section>
-
-  <section id="dress">
-    <div class="head">
-      <span class="label">Кейс WB · одежда: карточка целиком по одному фото</span>
-      <h2>Платье в рубчик: съёмка, инфографика и варианты главного фото для A/B-теста</h2>
-      <p>Исходник — одно фото платья с сайта бренда. Сначала базовый кадр с моделью, от него — все ракурсы, чтобы лицо, посадка и цвет совпадали. Дальше инфографика в формате WB 900×1200 с текстом, свёрстанным вручную, и четыре варианта главного фото под разные гипотезы кликабельности.</p>
-    </div>
-    <div class="grid4">
-      <figure><img src="img/dress_main.jpg" alt="Главное фото: модель в бордовом платье в рубчик на светлом фоне" loading="lazy"><figcaption>Главное фото, 3:4</figcaption></figure>
-      <figure><img src="img/dress_detail.jpg" alt="Деталь: воротник и рубчик" loading="lazy"><figcaption>Деталь: воротник, пуговицы, рубчик</figcaption></figure>
-      <figure><img src="img/dress_side.jpg" alt="Вид со спины" loading="lazy"><figcaption>Посадка со спины и длина</figcaption></figure>
-      <figure><img src="img/dress_life.jpg" alt="Лайфстайл: осенняя улица" loading="lazy"><figcaption>Лайфстайл для доп. фото</figcaption></figure>
-    </div>
-    <div class="grid5">
-      <figure><img src="img/dress_info1.jpg" alt="Слайд 1: обложка" loading="lazy"><figcaption>1 · Обложка</figcaption></figure>
-      <figure><img src="img/dress_info2.jpg" alt="Слайд 2: детали" loading="lazy"><figcaption>2 · Детали</figcaption></figure>
-      <figure><img src="img/dress_info3.jpg" alt="Слайд 3: состав и уход" loading="lazy"><figcaption>3 · Состав и уход</figcaption></figure>
-      <figure><img src="img/dress_info4.jpg" alt="Слайд 4: размерная сетка" loading="lazy"><figcaption>4 · Размерная сетка</figcaption></figure>
-      <figure><img src="img/dress_info5.jpg" alt="Слайд 5: с чем носить" loading="lazy"><figcaption>5 · С чем носить</figcaption></figure>
-    </div>
-    <figure>
-      <img src="img/dress_ab_sheet.jpg" alt="Четыре варианта главного фото: студия, тёплая стена, зелёный контраст, сидя на стуле" loading="lazy">
-      <figcaption>Четыре гипотезы для главного фото: нейтральная студия, тёплый свет, контрастный фон, живая поза. Одна модель и одно платье, меняется только то, что проверяем.</figcaption>
-    </figure>
-    <p class="note">Состав и размеры на слайдах условные: в реальной карточке они берутся из паспорта изделия.</p>
-  </section>
-
-  <section id="home">
-    <div class="head">
-      <span class="label">Кейс · товары для дома</span>
-      <h2>Аромасвеча: лайфстайл-съёмка и три слайда для карточки</h2>
-      <p>Товар с этикеткой перенесён один в один, включая текст на ней. Три сцены под разные задачи карточки: настроение, масштаб в руках, чистая предметка. Из них собраны слайды с выгодами и правилами использования.</p>
-    </div>
-    <div class="grid3">
-      <figure><img src="img/candle_main.jpg" alt="Свеча на деревянном столе у окна" loading="lazy"><figcaption>Лайфстайл: вечер у окна</figcaption></figure>
-      <figure><img src="img/candle_hands.jpg" alt="Свеча в руках" loading="lazy"><figcaption>Масштаб: в руках</figcaption></figure>
-      <figure><img src="img/candle_shelf.jpg" alt="Свеча на мраморной полке" loading="lazy"><figcaption>Предметка: полка и эвкалипт</figcaption></figure>
-    </div>
-    <div class="grid3">
-      <figure><img src="img/candle_info1.jpg" alt="Слайд 1" loading="lazy"><figcaption>1 · Обложка</figcaption></figure>
-      <figure><img src="img/candle_info2.jpg" alt="Слайд 2" loading="lazy"><figcaption>2 · Почему эта</figcaption></figure>
-      <figure><img src="img/candle_info3.jpg" alt="Слайд 3" loading="lazy"><figcaption>3 · Как зажигать</figcaption></figure>
-    </div>
-  </section>
-
-  <section id="beauty">
-    <div class="head">
-      <span class="label">Кейс · косметика</span>
-      <h2>Крем с пептидами: баночка на модели, текстура, предметка и слайды</h2>
-      <p>Баночка с этикеткой сохранена точно, модель одна во всех кадрах с лицом. Набор закрывает типовую карточку уходовой косметики: эмоция и кожа, текстура продукта, спокойная предметка, инструкция.</p>
-    </div>
-    <div class="grid4">
-      <figure><img src="img/cream_main.jpg" alt="Модель держит баночку крема у щеки" loading="lazy"><figcaption>Главное: продукт и кожа</figcaption></figure>
-      <figure><img src="img/cream_hands.jpg" alt="Модель наносит крем" loading="lazy"><figcaption>Применение</figcaption></figure>
-      <figure><img src="img/cream_texture.jpg" alt="Текстура крема" loading="lazy"><figcaption>Текстура, 1:1</figcaption></figure>
-      <figure><img src="img/cream_shelf.jpg" alt="Баночка на деревянном подносе" loading="lazy"><figcaption>Предметка</figcaption></figure>
-    </div>
-    <div class="grid3">
-      <figure><img src="img/cream_info1.jpg" alt="Слайд 1" loading="lazy"><figcaption>1 · Обложка</figcaption></figure>
-      <figure><img src="img/cream_info2.jpg" alt="Слайд 2" loading="lazy"><figcaption>2 · Текстура и состав</figcaption></figure>
-      <figure><img src="img/cream_info3.jpg" alt="Слайд 3" loading="lazy"><figcaption>3 · Как пользоваться</figcaption></figure>
-    </div>
-  </section>
-
-  <section id="ugc">
-    <div class="head">
-      <span class="label">Кейс · UGC с AI-персонажем</span>
-      <h2>Интеграция продукта в контент Саши</h2>
-      <p>Тот же крем в руках у AI-инфлюенсера: кадр в её доме, селфи-формат, живая мимика. Так бренд получает нативную рекламу у персонажа без съёмочного дня и без риска, что блогер не выйдет на связь.</p>
-    </div>
-    <div class="step">
-      <figure><img src="img/ugc_still.jpg" alt="Саша сидит на кровати и показывает баночку крема" loading="lazy"><figcaption>Стоп-кадр для UGC-ролика</figcaption></figure>
-      <figure><video src="vid/ugc_cream.mp4" poster="img/poster_ugc_cream.jpg" controls muted playsinline preload="none" style="max-width:320px"></video><figcaption>UGC-ролик 5 с: показывает баночку, этикетка в камеру</figcaption></figure>
-    </div>
-  </section>
-
-  <section id="wb">
-    <div class="head">
-      <span class="label">Кейс WB · карточка товара по одному фото</span>
-      <h2>Кардиган с косами: набор фото для карточки Wildberries</h2>
-      <p>Исходник — одно фото вещи без модели. Из него собран набор для карточки: главное фото на светлом фоне, деталь вязки, вариант носки нараспашку, ракурс в три четверти для посадки и длины, лайфстайл-кадр. Узор кос, цвет, V-вырез, застёжка без пуговиц и длина совпадают с товаром.</p>
-    </div>
-    <div class="step">
-      <figure class="product">
-        <img src="img/wb_product.jpg" alt="Исходное фото товара: кремовый кардиган с косами" loading="lazy">
-        <figcaption>Исходник: фото товара от селлера</figcaption>
-      </figure>
-      <figure>
-        <img src="img/wb_main.jpg" alt="Главное фото карточки: модель в кардигане на светлом фоне" loading="lazy">
-        <figcaption>Главное фото карточки, 3:4</figcaption>
+      <figure class="src">
+        <img src="img/polo_src.jpg" alt="Исходное фото селлера: красное платье-поло в рубчик" loading="eager">
+        <figcaption class="cap">Было: фото селлера</figcaption>
       </figure>
     </div>
-    <div class="grid4">
-      <figure><img src="img/wb_detail.jpg" alt="Деталь вязки и V-выреза" loading="lazy"><figcaption>Деталь: вязка, V-вырез, гладкая застёжка</figcaption></figure>
-      <figure><img src="img/wb_open.jpg" alt="Кардиган нараспашку поверх белого топа" loading="lazy"><figcaption>Как носить: нараспашку</figcaption></figure>
-      <figure><img src="img/wb_side.jpg" alt="Ракурс в три четверти" loading="lazy"><figcaption>Три четверти: длина и посадка</figcaption></figure>
-      <figure><img src="img/wb_life.jpg" alt="Лайфстайл у окна с кружкой" loading="lazy"><figcaption>Лайфстайл для доп. фото</figcaption></figure>
+    <div class="grid">
+      <figure class="big"><img src="img/polo_1.jpg" alt="Главный кадр: модель в красном платье-поло на оливковом фоне" loading="eager"></figure>
+      <figure><img src="img/polo_5.jpg" alt="Портрет крупно, воротник" loading="lazy"></figure>
+      <figure><img src="img/polo_2.jpg" alt="С жакетом в руке" loading="lazy"></figure>
+      <figure><img src="img/polo_3.jpg" alt="Со спины" loading="lazy"></figure>
+      <figure><img src="img/polo_4.jpg" alt="Сидя на стуле" loading="lazy"></figure>
+      <figure><img src="img/polo_6.jpg" alt="В движении" loading="lazy"></figure>
+      <figure><img src="img/polo_7.jpg" alt="Низ платья и ботильоны" loading="lazy"></figure>
+      <figure><img src="img/polo_8.jpg" alt="Воротник и пуговицы крупно" loading="lazy"></figure>
+      <figure><img src="img/polo_9.jpg" alt="Раскладка платья на белом" loading="lazy"></figure>
+    </div>
+    <span class="num sub">Инфографика</span>
+    <div class="row" style="--n:5">
+      <figure><img src="img/polo_info1.jpg" alt="Слайд 1: обложка" loading="lazy"></figure>
+      <figure><img src="img/polo_info2.jpg" alt="Слайд 2: детали" loading="lazy"></figure>
+      <figure><img src="img/polo_info3.jpg" alt="Слайд 3: состав и уход" loading="lazy"></figure>
+      <figure><img src="img/polo_info4.jpg" alt="Слайд 4: размеры" loading="lazy"></figure>
+      <figure><img src="img/polo_info5.jpg" alt="Слайд 5: финал" loading="lazy"></figure>
+    </div>
+    <span class="num sub">Видео для карточки</span>
+    <div class="vblock">
+      <figure><video src="vid/polo_card.mp4" poster="img/poster_polo_card.jpg" controls muted playsinline preload="none"></video></figure>
+      <p>8 секунд по образцу видео бренда на WB: общий план, воротник с переходом к лицу, средний план, поворот головы, трикотаж крупно, разворот спиной. Каждый план оживлён из кадра этой же съёмки, поэтому модель и платье совпадают с фото.</p>
     </div>
   </section>
 
-  <section id="info">
+  <section id="cream">
     <div class="head">
-      <span class="label">Кейс WB · инфографика</span>
-      <h2>Тот же кардиган: 5 слайдов инфографики для карточки</h2>
-      <p>Из AI-фото собрана карточка целиком: обложка с главными преимуществами, детали крупным планом, состав и уход, размерная сетка, лайфстайл с подсказками «с чем носить». Формат WB 900×1200, текст свёрстан вручную, поэтому он чёткий и без ошибок. Состав и размеры в макете условные.</p>
-    </div>
-    <div class="grid5">
-      <figure><img src="img/info1.jpg" alt="Слайд 1: обложка с преимуществами и размерами" loading="lazy"><figcaption>1 · Обложка</figcaption></figure>
-      <figure><img src="img/info2.jpg" alt="Слайд 2: детали вязки, вырез, резинка" loading="lazy"><figcaption>2 · Детали</figcaption></figure>
-      <figure><img src="img/info3.jpg" alt="Слайд 3: состав и уход" loading="lazy"><figcaption>3 · Состав и уход</figcaption></figure>
-      <figure><img src="img/info4.jpg" alt="Слайд 4: размерная сетка" loading="lazy"><figcaption>4 · Размерная сетка</figcaption></figure>
-      <figure><img src="img/info5.jpg" alt="Слайд 5: лайфстайл и с чем носить" loading="lazy"><figcaption>5 · С чем носить</figcaption></figure>
-    </div>
-  </section>
-
-  <section id="lace">
-    <div class="head">
-      <span class="label">Кейс · одна вещь → серия из 8 кадров</span>
-      <h2>Шёлковый топ с кружевом: от фото товара до фешн-серии</h2>
-      <p>Исходник — только фото топа на сайте бренда. Задача: собрать серию как для карточки и соцсетей, с одной моделью, одной локацией и точным кружевом в каждом кадре.</p>
-    </div>
-    <div class="step">
-      <figure class="product">
-        <img src="img/product.jpg" alt="Исходное фото товара: чёрный шёлковый топ с кружевным вырезом" loading="lazy">
-        <figcaption>Исходник: фото товара</figcaption>
+      <div class="txt">
+        <span class="num">02 — Косметика · фото и инфографика</span>
+        <h2>Крем Orjena: из фото продавца — съёмка в ванной</h2>
+        <p>Предметка на травертине, текстура, модель с баночкой и у зеркала — одна локация и один свет. Этикетка перенесена один в один.</p>
+      </div>
+      <figure class="src">
+        <img src="img/cr_src.jpg" alt="Исходное фото продавца: баночка крема Orjena на сером фоне" loading="lazy">
+        <figcaption class="cap">Было: фото продавца</figcaption>
       </figure>
-      <figure>
-        <img src="img/lace0.jpg" alt="Базовый кадр: модель в этом топе в интерьере с рифлёным стеклом" loading="lazy">
-        <figcaption>Базовый кадр: модель, образ и локация. От него строятся все ракурсы, поэтому лицо и вещь не уплывают.</figcaption>
+    </div>
+    <div class="grid">
+      <figure><img src="img/cr_1.jpg" alt="Баночка крема на травертине" loading="lazy"></figure>
+      <figure><img src="img/cr_3.jpg" alt="Модель держит баночку у лица" loading="lazy"></figure>
+      <figure><img src="img/cr_2.jpg" alt="Открытая баночка и крышка" loading="lazy"></figure>
+      <figure><img src="img/cr_4.jpg" alt="Модель наносит крем на скулу" loading="lazy"></figure>
+      <figure><img src="img/cr_6.jpg" alt="Мазок текстуры на камне" loading="lazy"></figure>
+      <figure><img src="img/cr_5.jpg" alt="Модель у зеркала с баночкой" loading="lazy"></figure>
+      <figure><img src="img/cr_8.jpg" alt="Баночка в руках" loading="lazy"></figure>
+      <figure><img src="img/cr_7.jpg" alt="Лицо крупно" loading="lazy"></figure>
+    </div>
+    <span class="num sub">Инфографика</span>
+    <div class="row" style="--n:4">
+      <figure><img src="img/cr_info1.jpg" alt="Крем, слайд 1: обложка" loading="lazy"></figure>
+      <figure><img src="img/cr_info2.jpg" alt="Крем, слайд 2: текстура" loading="lazy"></figure>
+      <figure><img src="img/cr_info3.jpg" alt="Крем, слайд 3: как наносить" loading="lazy"></figure>
+      <figure><img src="img/cr_info4.jpg" alt="Крем, слайд 4: результат" loading="lazy"></figure>
+    </div>
+  </section>
+
+  <section id="men">
+    <div class="head">
+      <div class="txt">
+        <span class="num">03 — Мужская одежда · фото и инфографика</span>
+        <h2>Джемпер-поло: из раскладки продавца — съёмка с моделью</h2>
+        <p>Студия с белой стеной, как в мужских карточках брендов: полный рост, спина, крупно ворот, профиль, детали вязки. Цвет, молния и рубчик — как у товара.</p>
+      </div>
+      <figure class="src">
+        <img src="img/mn_src.jpg" alt="Исходное фото продавца: оливковый джемпер-поло на белом" loading="lazy">
+        <figcaption class="cap">Было: фото продавца</figcaption>
       </figure>
     </div>
-    <div class="grid4">
-      <figure><img src="img/lace1.jpg" alt="Портрет в камеру" loading="lazy"><figcaption>Портрет в камеру</figcaption></figure>
-      <figure><img src="img/lace2.jpg" alt="Три четверти" loading="lazy"><figcaption>Три четверти</figcaption></figure>
-      <figure><img src="img/lace4.jpg" alt="Крупно вещь" loading="lazy"><figcaption>Крупно: кружево и посадка</figcaption></figure>
-      <figure><img src="img/lace8.jpg" alt="Деталь с рукой" loading="lazy"><figcaption>Деталь: рука на бретели</figcaption></figure>
-      <figure><img src="img/lace5.jpg" alt="Сидя в кресле" loading="lazy"><figcaption>Сидя в кресле</figcaption></figure>
-      <figure><img src="img/lace6.jpg" alt="У столика" loading="lazy"><figcaption>У столика</figcaption></figure>
-      <figure><img src="img/lace7.jpg" alt="Через плечо" loading="lazy"><figcaption>Через плечо, спина</figcaption></figure>
-      <figure><img src="img/lace3.jpg" alt="Ракурс снизу" loading="lazy"><figcaption>Ракурс снизу</figcaption></figure>
+    <div class="grid g3">
+      <figure class="big"><img src="img/mn_1.jpg" alt="Модель в полный рост в оливковом джемпере" loading="lazy"></figure>
+      <figure><img src="img/mn_3.jpg" alt="Лицо и воротник крупно" loading="lazy"></figure>
+      <figure><img src="img/mn_2.jpg" alt="Вид со спины" loading="lazy"></figure>
+      <figure><img src="img/mn_4.jpg" alt="Модель на корточках" loading="lazy"></figure>
+      <figure><img src="img/mn_6.jpg" alt="Профиль, руки в карманах" loading="lazy"></figure>
+      <figure><img src="img/mn_5.jpg" alt="Манжета и низ крупно" loading="lazy"></figure>
     </div>
-    <p class="note">Проверяю каждый кадр крупно: кружево, бретели, руки и пальцы, лицо. Брак переделываю до сдачи.</p>
-  </section>
-
-  <section id="ab">
-    <div class="head">
-      <span class="label">Кейс · одна вещь на 21 модели</span>
-      <h2>Тот же образ на разных типажах для A/B-тестов карточки</h2>
-      <p>Одна вещь, одна локация, одинаковый свет. Меняется только модель: блондинки, рыжие, брюнетки, разная фактура волос. Так можно проверять гипотезы CTR на главном фото, не пересобирая съёмку.</p>
+    <span class="num sub">Инфографика</span>
+    <div class="row" style="--n:4">
+      <figure><img src="img/mn_info1.jpg" alt="Джемпер, слайд 1: обложка" loading="lazy"></figure>
+      <figure><img src="img/mn_info2.jpg" alt="Джемпер, слайд 2: детали" loading="lazy"></figure>
+      <figure><img src="img/mn_info3.jpg" alt="Джемпер, слайд 3: посадка" loading="lazy"></figure>
+      <figure><img src="img/mn_info4.jpg" alt="Джемпер, слайд 4: состав и уход" loading="lazy"></figure>
     </div>
-    <div class="grid7">
-      <img src="img/m01.jpg" alt="Модель 1" loading="lazy"><img src="img/m02.jpg" alt="Модель 2" loading="lazy"><img src="img/m03.jpg" alt="Модель 3" loading="lazy"><img src="img/m04.jpg" alt="Модель 4" loading="lazy"><img src="img/m05.jpg" alt="Модель 5" loading="lazy"><img src="img/m06.jpg" alt="Модель 6" loading="lazy"><img src="img/m07.jpg" alt="Модель 7" loading="lazy">
-      <img src="img/m08.jpg" alt="Модель 8" loading="lazy"><img src="img/m09.jpg" alt="Модель 9" loading="lazy"><img src="img/m10.jpg" alt="Модель 10" loading="lazy"><img src="img/m11.jpg" alt="Модель 11" loading="lazy"><img src="img/m12.jpg" alt="Модель 12" loading="lazy"><img src="img/m13.jpg" alt="Модель 13" loading="lazy"><img src="img/m14.jpg" alt="Модель 14" loading="lazy">
-      <img src="img/m15.jpg" alt="Модель 15" loading="lazy"><img src="img/m16.jpg" alt="Модель 16" loading="lazy"><img src="img/m17.jpg" alt="Модель 17" loading="lazy"><img src="img/m18.jpg" alt="Модель 18" loading="lazy"><img src="img/m19.jpg" alt="Модель 19" loading="lazy"><img src="img/m20.jpg" alt="Модель 20" loading="lazy"><img src="img/m21.jpg" alt="Модель 21" loading="lazy">
-    </div>
-  </section>
-
-  <section id="video">
-    <div class="head">
-      <span class="label">Кейс · короткие видео для карточек</span>
-      <h2>Ролики для карточек товаров и Reels бренда</h2>
-      <p>Видео с одной и той же моделью: переходы, смена образа, демонстрация волос и одежды в движении. Повторяю трендовые форматы по референсу, кадр за кадром, с липсинком и озвучкой.</p>
-    </div>
-    <div class="grid3">
-      <figure><video src="vid/before_after.mp4" poster="img/poster_before_after.jpg" controls muted playsinline preload="none"></video><figcaption>До / после: переход «ладонями», смена образа, липсинк</figcaption></figure>
-      <figure><video src="vid/curls.mp4" poster="img/poster_curls.jpg" controls muted playsinline preload="none"></video><figcaption>Вечер → утро: укладка без плойки, движение волос</figcaption></figure>
-      <figure><video src="vid/firstclass.mp4" poster="img/poster_firstclass.jpg" controls muted playsinline preload="none"></video><figcaption>Две локации одним роликом, переход и липсинк</figcaption></figure>
-    </div>
+    <p class="cap">Состав, размеры и свойства на слайдах условные: в реальной карточке берутся из паспорта товара.</p>
   </section>
 
   <section id="text">
     <div class="head">
-      <span class="label">Сценарии и разборы</span>
-      <h2>Пишу сценарии Reels и разбираю, почему ролик залетает</h2>
-      <p>Два тестовых задания, выполненных для работодателей: разбор монтажа продающего ролика по секундам и сценарии Reels для эксперта с разбором вирусного референса.</p>
+      <div class="txt">
+        <span class="num">04 — Сценарии</span>
+        <h2>Сценарии Reels и разборы роликов</h2>
+      </div>
     </div>
-    <div class="cards">
-      <div class="card">
-        <h3>Разбор монтажа продающего Reels</h3>
-        <p>Первая минута ролика по склейкам: где хук, зачем каждая смена кадра, где зритель уходит и как это исправить. Таблица таймингов и список правок.</p>
-        <a class="btn" href="https://docs.google.com/document/d/1-BcK2PkUnev9AG63XPaUCmkQRSk1iKD0dFl_s3-Rk_A/" target="_blank" rel="noopener">Открыть документ</a>
-      </div>
-      <div class="card">
-        <h3>Сценарии Reels и сторис для эксперта</h3>
-        <p>Два момента из прямого эфира, переписанных в сценарии на 30–45 секунд: хук, структура, текст на экране, призыв. Плюс разбор залетевшего Reels: почему смотрят до конца.</p>
-        <a class="btn" href="https://docs.google.com/document/d/1aT0ITsAYiUissn4Q_-hJhPeDqxdueJSOEao1pTy0i_I/" target="_blank" rel="noopener">Открыть документ</a>
-      </div>
+    <div class="links">
+      <a href="https://docs.google.com/document/d/1-BcK2PkUnev9AG63XPaUCmkQRSk1iKD0dFl_s3-Rk_A/" target="_blank" rel="noopener"><span>Разбор монтажа продающего Reels по секундам</span><span>Google Docs ↗</span></a>
+      <a href="https://docs.google.com/document/d/1aT0ITsAYiUissn4Q_-hJhPeDqxdueJSOEao1pTy0i_I/" target="_blank" rel="noopener"><span>Сценарии Reels и сторис для эксперта</span><span>Google Docs ↗</span></a>
     </div>
   </section>
 
-  <section id="process">
+  <section id="about">
     <div class="head">
-      <span class="label">Как я работаю</span>
-      <h2>Процесс</h2>
+      <div class="txt">
+        <span class="num">05 — Обо мне</span>
+        <h2>Полина Глухова, AI-креатор</h2>
+      </div>
     </div>
-    <ul class="plain">
-      <li>Разбираю задачу, ЦА и конкурентов: карточки в выдаче, тренды категории или вирусные ролики в нише.</li>
-      <li>Делаю базовый кадр: модель или персонаж, образ, локация. Согласовываю его до серии.</li>
-      <li>Собираю серию от одного базового кадра, чтобы вещь и лицо совпадали во всех ракурсах и видео.</li>
-      <li>Проверяю детали вещи один в один: фактуру, швы, фурнитуру, посадку. Руки и лица смотрю крупно, брак переделываю.</li>
-      <li>Для видео: раскадровка по таймингам референса, генерация клипов, монтаж под звук, текст на экране, озвучка и липсинк.</li>
-      <li>Отдаю в форматах площадки: WB 900×1200, Reels 1080×1920, карусели, обложки. Для карточек предлагаю варианты главного фото под A/B-тест CTR.</li>
-    </ul>
+    <div class="about">
+      <p>Работаю по задачам с дедлайном. Начинаю с базового кадра и согласую его, потом собираю серию, чтобы лицо и вещь совпадали во всех ракурсах. Руки, лица и детали товара проверяю крупно. Отдаю в форматах площадки: WB 900×1200, Reels 1080×1920.</p>
+      <p>Nano Banana Pro · GPT Image 2.5 · Higgsfield · Midjourney · Kling 3.0 · Seedance · ElevenLabs · Photoshop · Figma</p>
+      <p class="contacts">Telegram <a href="https://t.me/poolina_g">@poolina_g</a> · <a href="mailto:polya.glushko@gmail.com">polya.glushko@gmail.com</a></p>
+      <p>Ижевск, удалённо · самозанятая. Готова сделать тестовое на вашем товаре.</p>
+    </div>
   </section>
 
-  <footer class="contact" id="contact">
-    <span class="label">Связаться</span>
-    <h2>Готова выполнить тестовое задание на вашем товаре или нише</h2>
-    <p class="val">Telegram: <a href="https://t.me/poolina_g">@poolina_g</a> · Почта: <a href="mailto:polya.glushko@gmail.com">polya.glushko@gmail.com</a></p>
-    <p style="color:var(--muted);font-size:14px">Полина Глухова · Ижевск, работаю удалённо · самозанятая</p>
-  </footer>
+</main>
 
-</div>
-
+<script>
+  // highlight the menu item of the section in view
+  const links=[...document.querySelectorAll('.menu a')];
+  const io=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){links.forEach(a=>a.classList.toggle('on',a.getAttribute('href')==='#'+e.target.id))}})},{rootMargin:'-40% 0px -55% 0px'});
+  document.querySelectorAll('main section, main .intro').forEach(s=>io.observe(s));
+</script>
 </body>
 </html>
