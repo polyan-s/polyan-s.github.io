@@ -68,6 +68,14 @@ video{aspect-ratio:9/16;object-fit:cover}
 .vblock{display:grid;grid-template-columns:minmax(0,300px) minmax(0,1fr);gap:28px;align-items:end}
 .vblock video{aspect-ratio:3/4}
 .vblock p{color:var(--muted);max-width:52ch;font-size:14.5px}
+.doc{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,260px);gap:32px;align-items:start;padding-top:22px;border-top:1px solid var(--line);max-width:980px}
+.doc-txt{display:grid;gap:10px}
+.doc h3{margin:0;font-size:19px;font-weight:500}
+.doc p{color:var(--muted);font-size:14.5px;max-width:62ch}
+.doc ul{margin:0;padding-left:18px;display:grid;gap:6px;font-size:14.5px;max-width:64ch}
+.doc li b{font-weight:500}
+.doc .more{justify-self:start;border-bottom:1px solid var(--fg);font-size:14px}
+.doc-img img{aspect-ratio:1/1;object-fit:cover;object-position:top;border:1px solid var(--line)}
 .sasha-av{width:64px;height:64px;border-radius:50%;object-fit:cover}
 .links{display:grid;gap:10px;max-width:640px}
 .links a{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:16px;padding:14px 0;border-bottom:1px solid var(--line)}
@@ -85,6 +93,8 @@ video{aspect-ratio:9/16;object-fit:cover}
   main{margin-left:0;padding:36px 16px 72px;gap:80px}
   .grid,.grid.g3{grid-template-columns:repeat(2,minmax(0,1fr))}
   .vblock{grid-template-columns:1fr}
+  .doc{grid-template-columns:1fr}
+  .doc-img{max-width:220px}
   .vblock figure{max-width:300px}
   .row{grid-template-columns:none;grid-auto-flow:column;grid-auto-columns:42%;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:6px}
   .row > *{scroll-snap-align:start}
@@ -252,13 +262,37 @@ video{aspect-ratio:9/16;object-fit:cover}
   <section id="text">
     <div class="head">
       <div class="txt">
-        <span class="num">05 — Сценарии</span>
-        <h2>Сценарии Reels и разборы роликов</h2>
+        <span class="num">05 — Сценарии и разборы Reels</span>
+        <h2>Два тестовых задания: разбор монтажа и сценарии из эфира</h2>
       </div>
     </div>
-    <div class="links">
-      <a href="https://docs.google.com/document/d/1-BcK2PkUnev9AG63XPaUCmkQRSk1iKD0dFl_s3-Rk_A/" target="_blank" rel="noopener"><span>Разбор монтажа продающего Reels по секундам</span><span>Google Docs ↗</span></a>
-      <a href="https://docs.google.com/document/d/1aT0ITsAYiUissn4Q_-hJhPeDqxdueJSOEao1pTy0i_I/" target="_blank" rel="noopener"><span>Сценарии Reels и сторис для эксперта</span><span>Google Docs ↗</span></a>
+    <div class="doc">
+      <div class="doc-txt">
+        <span class="cap">Тестовое · LENIVINS.AI · эксперт по монтажу Reels</span>
+        <h3>Разбор продающего ролика по секундам</h3>
+        <p>Задача: посмотреть первую минуту ролика и сказать, что мешает досмотреть его до конца.</p>
+        <ul>
+          <li><b>Хук 0–2 с не цепляет</b> — предложила открыть ролик результатом и заголовком в две строки.</li>
+          <li><b>Звук −34,5 LUFS вместо ~−14</b> — поднять громкость, добавить whoosh и pop на склейки.</li>
+          <li><b>Субтитры и стикеры без шаблона</b>, паузы не вырезаны, завален горизонт — единый стиль и чистка.</li>
+        </ul>
+        <a class="more" href="https://docs.google.com/document/d/1-BcK2PkUnev9AG63XPaUCmkQRSk1iKD0dFl_s3-Rk_A/" target="_blank" rel="noopener">Открыть документ ↗</a>
+      </div>
+      <a class="doc-img" href="https://docs.google.com/document/d/1-BcK2PkUnev9AG63XPaUCmkQRSk1iKD0dFl_s3-Rk_A/" target="_blank" rel="noopener"><img src="img/doc_lenivins.jpg" alt="Первая страница разбора монтажа" loading="lazy"></a>
+    </div>
+    <div class="doc">
+      <div class="doc-txt">
+        <span class="cap">Тестовое · Formfactor · сценарист Reels и сторис</span>
+        <h3>Сценарии Reels из 4-часового эфира школы</h3>
+        <p>Задача: найти в эфире моменты для Reels, написать сценарий и разобрать чужой вирусный ролик.</p>
+        <ul>
+          <li><b>Нарезка</b> — 2 момента: первая фраза-хук, заголовок на экране, склейка по таймкодам. Например: «Вместо отклика — UX-аудит их сервиса».</li>
+          <li><b>Сценарий Reels</b> — таблица по секундам: текст спикера, что на экране, звук; два запасных хука и текст для обложки.</li>
+          <li><b>Разбор</b> — почему ролик на 602 тыс. просмотров досматривают и как перенести механику на эксперта.</li>
+        </ul>
+        <a class="more" href="https://docs.google.com/document/d/1aT0ITsAYiUissn4Q_-hJhPeDqxdueJSOEao1pTy0i_I/" target="_blank" rel="noopener">Открыть документ ↗</a>
+      </div>
+      <a class="doc-img" href="https://docs.google.com/document/d/1aT0ITsAYiUissn4Q_-hJhPeDqxdueJSOEao1pTy0i_I/" target="_blank" rel="noopener"><img src="img/doc_formfactor.jpg" alt="Первая страница сценариев Reels" loading="lazy"></a>
     </div>
   </section>
 
