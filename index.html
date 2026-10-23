@@ -56,6 +56,7 @@ section{display:grid;gap:26px;scroll-margin-top:32px}
 .grid .big img{height:100%}
 .row{display:grid;grid-template-columns:repeat(var(--n,5),minmax(0,1fr));gap:var(--gap)}
 .row img{aspect-ratio:3/4;object-fit:cover}
+.row video{aspect-ratio:9/16;object-fit:cover}
 .sub{display:grid;gap:12px}
 figure{margin:0;display:grid;gap:8px;align-content:start}
 figure img,figure video{transition:opacity .25s}
@@ -104,6 +105,7 @@ video{aspect-ratio:9/16;object-fit:cover}
     <a href="#polo">Платье-поло</a>
     <a href="#cream">Крем</a>
     <a href="#men">Мужской джемпер</a>
+    <a href="#sasha">AI-персонаж</a>
     <a href="#text">Сценарии</a>
     <a href="#about">Обо мне</a>
   </nav>
@@ -144,6 +146,14 @@ video{aspect-ratio:9/16;object-fit:cover}
       <figure><img src="img/polo_8.jpg" alt="Воротник и пуговицы крупно" loading="lazy"></figure>
       <figure><img src="img/polo_9.jpg" alt="Раскладка платья на белом" loading="lazy"></figure>
     </div>
+    <span class="num sub">Главное фото · A/B-тест</span>
+    <div class="row" style="--n:4">
+      <figure><img src="img/polo_1.jpg" alt="Вариант A: студия, полный рост" loading="lazy"><figcaption class="cap">A — студия, полный рост</figcaption></figure>
+      <figure><img src="img/polo_6.jpg" alt="Вариант B: в движении" loading="lazy"><figcaption class="cap">B — в движении</figcaption></figure>
+      <figure><img src="img/polo_4.jpg" alt="Вариант C: сидя" loading="lazy"><figcaption class="cap">C — живая поза сидя</figcaption></figure>
+      <figure><img src="img/polo_5.jpg" alt="Вариант D: крупный план" loading="lazy"><figcaption class="cap">D — крупно лицо и ворот</figcaption></figure>
+    </div>
+    <p class="cap">Четыре гипотезы для обложки: вещь и модель одни, меняется только подача. Победителя выбирают по CTR в рекламном кабинете WB.</p>
     <span class="num sub">Инфографика</span>
     <div class="row" style="--n:5">
       <figure><img src="img/polo_info1.jpg" alt="Слайд 1: обложка" loading="lazy"></figure>
@@ -220,10 +230,29 @@ video{aspect-ratio:9/16;object-fit:cover}
     <p class="cap">Состав, размеры и свойства на слайдах условные: в реальной карточке берутся из паспорта товара.</p>
   </section>
 
+  <section id="sasha">
+    <div class="head">
+      <div class="txt">
+        <span class="num">04 — AI-персонаж · Reels</span>
+        <h2>Саша: AI-блогер, которая переехала из Москвы на конюшню</h2>
+        <p>Придумала персонажа и легенду, держу одно лицо во всех кадрах и делаю Reels по трендам: стоп-кадры, оживление, монтаж, тексты. 18 публикаций, лучший ролик — 8&nbsp;400+ просмотров на новом аккаунте без рекламы. <a href="https://www.instagram.com/sasha.notalex/" target="_blank" rel="noopener" style="border-bottom:1px solid var(--line);color:var(--fg)">@sasha.notalex</a></p>
+      </div>
+      <figure class="src">
+        <img src="img/sasha_avatar.jpg" alt="Эталон лица Саши: чёрные кудри, голубые глаза" loading="lazy" style="aspect-ratio:1/1;object-fit:cover">
+        <figcaption class="cap">Эталон лица</figcaption>
+      </figure>
+    </div>
+    <div class="row" style="--n:3;max-width:820px">
+      <figure><video src="vid/sasha_obidelas.mp4" poster="img/poster_sasha_obidelas.jpg" controls muted playsinline preload="none"></video><figcaption class="cap">8 485 просмотров · «ни один мужчина так за мной не ходил»</figcaption></figure>
+      <figure><video src="vid/sasha_svoboda.mp4" poster="img/poster_sasha_svoboda.jpg" controls muted playsinline preload="none"></video><figcaption class="cap">3 667 просмотров · «мы недооцениваем свою свободу воли»</figcaption></figure>
+      <figure><video src="vid/sasha_benzin.mp4" poster="img/poster_sasha_benzin.jpg" controls muted playsinline preload="none"></video><figcaption class="cap">1 993 просмотра · «мой транспорт на овсе»</figcaption></figure>
+    </div>
+  </section>
+
   <section id="text">
     <div class="head">
       <div class="txt">
-        <span class="num">04 — Сценарии</span>
+        <span class="num">05 — Сценарии</span>
         <h2>Сценарии Reels и разборы роликов</h2>
       </div>
     </div>
@@ -236,7 +265,7 @@ video{aspect-ratio:9/16;object-fit:cover}
   <section id="about">
     <div class="head">
       <div class="txt">
-        <span class="num">05 — Обо мне</span>
+        <span class="num">06 — Обо мне</span>
         <h2>Полина Глухова, AI-креатор</h2>
       </div>
     </div>
