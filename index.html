@@ -76,6 +76,14 @@ video{aspect-ratio:9/16;object-fit:cover}
 .doc li b{font-weight:500}
 .doc .more{justify-self:start;border-bottom:1px solid var(--fg);font-size:14px}
 .doc-img img{aspect-ratio:1/1;object-fit:cover;object-position:top;border:1px solid var(--line)}
+.tg{justify-self:start;display:inline-block;margin-top:6px;padding:11px 18px;background:var(--fg);color:var(--bg);font-size:14px;letter-spacing:.02em}
+.tg:hover{opacity:.85}
+.ba{display:none}
+.steps{margin:0;padding:0;list-style:none;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px;counter-reset:st;max-width:1100px}
+.steps li{counter-increment:st;display:grid;gap:6px;align-content:start;border-top:1px solid var(--line);padding-top:14px}
+.steps li::before{content:"0" counter(st);font-size:12px;letter-spacing:.12em;color:var(--muted)}
+.steps b{font-weight:500;font-size:16px}
+.steps span{color:var(--muted);font-size:14px;line-height:1.55}
 .sasha-av{width:64px;height:64px;border-radius:50%;object-fit:cover}
 .links{display:grid;gap:10px;max-width:640px}
 .links a{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:16px;padding:14px 0;border-bottom:1px solid var(--line)}
@@ -89,7 +97,12 @@ video{aspect-ratio:9/16;object-fit:cover}
 @media (max-width:900px){
   .side{position:static;width:auto;padding:28px 16px 0;gap:18px}
   .menu{display:flex;flex-wrap:wrap;gap:6px 16px}
-  .side .foot{display:none}
+  .side .foot{display:flex;flex-wrap:wrap;gap:4px 16px;margin-top:0;font-size:13px}
+  .side .foot .small{display:none}
+  .ba.m-only{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);gap:10px;align-items:center;margin-top:6px}
+  .ba img{aspect-ratio:3/4;object-fit:cover}
+  .ba .arrow{font-size:22px;color:var(--muted)}
+  .steps{grid-template-columns:1fr;gap:16px}
   main{margin-left:0;padding:36px 16px 72px;gap:80px}
   .grid,.grid.g3{grid-template-columns:repeat(2,minmax(0,1fr))}
   .vblock{grid-template-columns:1fr}
@@ -116,8 +129,7 @@ video{aspect-ratio:9/16;object-fit:cover}
     <a href="#cream">Крем</a>
     <a href="#men">Мужской джемпер</a>
     <a href="#sasha">AI-персонаж</a>
-    <a href="#text">Сценарии</a>
-    <a href="#about">Обо мне</a>
+    <a href="#about">Как работаю</a>
   </nav>
   <div class="foot">
     <a href="https://t.me/poolina_g">Telegram @poolina_g</a>
@@ -129,8 +141,14 @@ video{aspect-ratio:9/16;object-fit:cover}
 <main>
 
   <header class="intro">
-    <h1>Делаю фотосессии, инфографику и видео для карточек WB по одному фото товара и пишу сценарии Reels.</h1>
+    <h1>Делаю фотосессии, инфографику и видео для карточек WB по одному фото товара. Веду AI-персонажа в Reels.</h1>
     <p>Почти 3 года делала инфографику для маркетплейсов и вела свой магазин на WB и Ozon — знаю, какая карточка продаёт.</p>
+    <div class="ba m-only">
+      <figure><img src="img/polo_src.jpg" alt="Было: фото селлера" loading="eager"><figcaption class="cap">Было</figcaption></figure>
+      <span class="arrow">→</span>
+      <figure><img src="img/polo_1.jpg" alt="Стало: студийная съёмка" loading="eager"><figcaption class="cap">Стало</figcaption></figure>
+    </div>
+    <a class="tg" href="https://t.me/poolina_g">Написать в Telegram →</a>
   </header>
 
   <section id="polo">
@@ -259,55 +277,23 @@ video{aspect-ratio:9/16;object-fit:cover}
     </div>
   </section>
 
-  <section id="text">
-    <div class="head">
-      <div class="txt">
-        <span class="num">05 — Сценарии и разборы Reels</span>
-        <h2>Два тестовых задания: разбор монтажа и сценарии из эфира</h2>
-      </div>
-    </div>
-    <div class="doc">
-      <div class="doc-txt">
-        <span class="cap">Тестовое · LENIVINS.AI · эксперт по монтажу Reels</span>
-        <h3>Разбор продающего ролика по секундам</h3>
-        <p>Задача: посмотреть первую минуту ролика и сказать, что мешает досмотреть его до конца.</p>
-        <ul>
-          <li><b>Хук 0–2 с не цепляет</b> — предложила открыть ролик результатом и заголовком в две строки.</li>
-          <li><b>Звук −34,5 LUFS вместо ~−14</b> — поднять громкость, добавить whoosh и pop на склейки.</li>
-          <li><b>Субтитры и стикеры без шаблона</b>, паузы не вырезаны, завален горизонт — единый стиль и чистка.</li>
-        </ul>
-        <a class="more" href="https://docs.google.com/document/d/1-BcK2PkUnev9AG63XPaUCmkQRSk1iKD0dFl_s3-Rk_A/" target="_blank" rel="noopener">Открыть документ ↗</a>
-      </div>
-      <a class="doc-img" href="https://docs.google.com/document/d/1-BcK2PkUnev9AG63XPaUCmkQRSk1iKD0dFl_s3-Rk_A/" target="_blank" rel="noopener"><img src="img/doc_lenivins.jpg" alt="Первая страница разбора монтажа" loading="lazy"></a>
-    </div>
-    <div class="doc">
-      <div class="doc-txt">
-        <span class="cap">Тестовое · Formfactor · сценарист Reels и сторис</span>
-        <h3>Сценарии Reels из 4-часового эфира школы</h3>
-        <p>Задача: найти в эфире моменты для Reels, написать сценарий и разобрать чужой вирусный ролик.</p>
-        <ul>
-          <li><b>Нарезка</b> — 2 момента: первая фраза-хук, заголовок на экране, склейка по таймкодам. Например: «Вместо отклика — UX-аудит их сервиса».</li>
-          <li><b>Сценарий Reels</b> — таблица по секундам: текст спикера, что на экране, звук; два запасных хука и текст для обложки.</li>
-          <li><b>Разбор</b> — почему ролик на 602 тыс. просмотров досматривают и как перенести механику на эксперта.</li>
-        </ul>
-        <a class="more" href="https://docs.google.com/document/d/1aT0ITsAYiUissn4Q_-hJhPeDqxdueJSOEao1pTy0i_I/" target="_blank" rel="noopener">Открыть документ ↗</a>
-      </div>
-      <a class="doc-img" href="https://docs.google.com/document/d/1aT0ITsAYiUissn4Q_-hJhPeDqxdueJSOEao1pTy0i_I/" target="_blank" rel="noopener"><img src="img/doc_formfactor.jpg" alt="Первая страница сценариев Reels" loading="lazy"></a>
-    </div>
-  </section>
-
   <section id="about">
     <div class="head">
       <div class="txt">
-        <span class="num">06 — Обо мне</span>
-        <h2>Полина Глухова, AI-креатор</h2>
+        <span class="num">05 — Как работаю</span>
+        <h2>От фото товара до готовой карточки</h2>
       </div>
     </div>
+    <ol class="steps">
+      <li><b>Присылаете фото товара</b><span>Можно с телефона или раскладку. Плюс пожелания: стиль, модель, референсы конкурентов.</span></li>
+      <li><b>Согласуем первый кадр</b><span>Модель, локация и свет. Пока он не утверждён, серию не делаю.</span></li>
+      <li><b>Делаю серию</b><span>8–10 кадров с одной моделью и в одной локации, инфографика, видео для карточки по образцу из вашей ниши.</span></li>
+      <li><b>Правки и сдача</b><span>Проверяю руки, лица и детали товара крупно. Отдаю в форматах WB: фото 900×1200, видео 3:4.</span></li>
+    </ol>
     <div class="about">
-      <p>Работаю по задачам с дедлайном. Начинаю с базового кадра и согласую его, потом собираю серию, чтобы лицо и вещь совпадали во всех ракурсах. Руки, лица и детали товара проверяю крупно. Отдаю в форматах площадки: WB 900×1200, Reels 1080×1920.</p>
-      <p>Nano Banana Pro · GPT Image 2.5 · Higgsfield · Midjourney · Kling 3.0 · Seedance · ElevenLabs · Photoshop · Figma</p>
+      <p>Nano Banana Pro · GPT Image 2.5 · Higgsfield · Kling 3.0 · Seedance · Photoshop · Figma</p>
       <p class="contacts">Telegram <a href="https://t.me/poolina_g">@poolina_g</a> · <a href="mailto:polya.glushko@gmail.com">polya.glushko@gmail.com</a></p>
-      <p>Ижевск, удалённо · самозанятая. Готова сделать тестовое на вашем товаре.</p>
+      <p>Полина Глухова · Ижевск, удалённо · самозанятая. Готова сделать тестовое на вашем товаре.</p>
     </div>
   </section>
 
