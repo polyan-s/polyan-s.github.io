@@ -5,6 +5,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Полина Глухова — AI-креатор</title>
 <meta name="description" content="Нейрофотосессии и инфографика для карточек Wildberries по одному фото товара, сценарии Reels. Портфолио Полины Глуховой.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Полина Глухова — AI-креатор">
+<meta property="og:description" content="Фото, инфографика и видео для карточек WB по одному фото товара. AI-персонаж в Reels: лучший ролик — 57 000+ просмотров.">
+<meta property="og:image" content="https://polyan-s.github.io/img/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:url" content="https://polyan-s.github.io/">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600&display=swap">
 <style>
@@ -84,6 +92,23 @@ video{aspect-ratio:9/16;object-fit:cover}
 .steps li::before{content:"0" counter(st);font-size:12px;letter-spacing:.12em;color:var(--muted)}
 .steps b{font-weight:500;font-size:16px}
 .steps span{color:var(--muted);font-size:14px;line-height:1.55}
+.stats{list-style:none;margin:6px 0 0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;max-width:760px}
+.stats li{display:grid;gap:4px;border-top:1px solid var(--line);padding-top:12px}
+.stats b{font-weight:600;font-size:22px;line-height:1.2}
+.stats span{color:var(--muted);font-size:13.5px;line-height:1.45}
+.services{list-style:none;margin:0;padding:0;display:grid;max-width:900px}
+.services li{display:grid;grid-template-columns:minmax(0,300px) minmax(0,1fr);gap:20px;padding:12px 0;border-bottom:1px solid var(--line)}
+.services b{font-weight:500}
+.services span{color:var(--muted);font-size:14.5px}
+main figure img{cursor:zoom-in}
+.lb{position:fixed;inset:0;z-index:50;background:rgba(255,255,255,.97);display:flex;align-items:center;justify-content:center;padding:48px 16px}
+.lb[hidden]{display:none}
+.lb img{max-width:min(92vw,1100px);max-height:86vh;width:auto;object-fit:contain;background:none}
+.lb button{position:absolute;background:none;border:0;font:inherit;font-size:30px;color:var(--fg);cursor:pointer;padding:12px 16px;line-height:1}
+.lb .x{top:calc(env(safe-area-inset-top,0px) + 8px);right:8px}
+.lb .pv{left:4px;top:50%;transform:translateY(-50%)}
+.lb .nx{right:4px;top:50%;transform:translateY(-50%)}
+.lb .ct{position:absolute;bottom:calc(env(safe-area-inset-bottom,0px) + 14px);left:0;right:0;text-align:center;font-size:12px;letter-spacing:.12em;color:var(--muted)}
 .sasha-av{width:64px;height:64px;border-radius:50%;object-fit:cover}
 .links{display:grid;gap:10px;max-width:640px}
 .links a{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:16px;padding:14px 0;border-bottom:1px solid var(--line)}
@@ -103,6 +128,10 @@ video{aspect-ratio:9/16;object-fit:cover}
   .ba img{aspect-ratio:3/4;object-fit:cover}
   .ba .arrow{font-size:22px;color:var(--muted)}
   .steps{grid-template-columns:1fr;gap:16px}
+  .stats{gap:10px}
+  .stats b{font-size:15px}
+  .stats span{font-size:11.5px;line-height:1.35}
+  .services li{grid-template-columns:1fr;gap:2px}
   main{margin-left:0;padding:36px 16px 72px;gap:80px}
   .grid,.grid.g3{grid-template-columns:repeat(2,minmax(0,1fr))}
   .vblock{grid-template-columns:1fr}
@@ -129,11 +158,12 @@ video{aspect-ratio:9/16;object-fit:cover}
     <a href="#cream">Крем</a>
     <a href="#men">Мужской джемпер</a>
     <a href="#sasha">AI-персонаж</a>
-    <a href="#about">Как работаю</a>
+    <a href="#about">Услуги</a>
   </nav>
   <div class="foot">
     <a href="https://t.me/poolina_g">Telegram @poolina_g</a>
     <a href="mailto:polya.glushko@gmail.com">polya.glushko@gmail.com</a>
+    <a href="portfolio.pdf" target="_blank" rel="noopener">Портфолио в PDF</a>
     <span class="small">Ижевск · удалённо</span>
   </div>
 </aside>
@@ -143,6 +173,11 @@ video{aspect-ratio:9/16;object-fit:cover}
   <header class="intro">
     <h1>Делаю фотосессии, инфографику и видео для карточек WB по одному фото товара. Веду AI-персонажа в Reels.</h1>
     <p>Почти 3 года делала инфографику для маркетплейсов и вела свой магазин на WB и Ozon — знаю, какая карточка продаёт.</p>
+    <ul class="stats">
+      <li><b>57 000+</b><span>просмотров у лучшего ролика AI-персонажа</span></li>
+      <li><b>3 категории</b><span>женская и мужская одежда, косметика</span></li>
+      <li><b>фото · инфо · видео</b><span>вся карточка из одного фото товара</span></li>
+    </ul>
     <div class="ba m-only">
       <figure><img src="img/polo_src.jpg" alt="Было: фото селлера" loading="eager"><figcaption class="cap">Было</figcaption></figure>
       <span class="arrow">→</span>
@@ -192,7 +227,7 @@ video{aspect-ratio:9/16;object-fit:cover}
     </div>
     <span class="num sub">Видео для карточки</span>
     <div class="vblock">
-      <figure><video src="vid/polo_card.mp4" poster="img/poster_polo_card.jpg" controls muted playsinline preload="none"></video></figure>
+      <figure><video src="vid/polo_card.mp4" poster="img/poster_polo_card.jpg" controls muted loop playsinline preload="none"></video></figure>
       <p>8 секунд по образцу видео бренда на WB: общий план, воротник с переходом к лицу, средний план, поворот головы, трикотаж крупно, разворот спиной. Каждый план оживлён из кадра этой же съёмки, поэтому модель и платье совпадают с фото.</p>
     </div>
   </section>
@@ -271,19 +306,27 @@ video{aspect-ratio:9/16;object-fit:cover}
       </figure>
     </div>
     <div class="row" style="--n:3;max-width:820px">
-      <figure><video src="vid/sasha_vlog_uvolili.mp4" poster="img/poster_sasha_vlog_uvolili.jpg" controls muted playsinline preload="none"></video><figcaption class="cap">57 067 просмотров · влог «меня уволили — переехала в деревню»</figcaption></figure>
-      <figure><video src="vid/sasha_r14k.mp4" poster="img/poster_sasha_r14k.jpg" controls muted playsinline preload="none"></video><figcaption class="cap">18 285 просмотров</figcaption></figure>
-      <figure><video src="vid/sasha_handstand.mp4" poster="img/poster_sasha_handstand.jpg" controls muted playsinline preload="none"></video><figcaption class="cap">6 365 просмотров · «вот так могу ещё»</figcaption></figure>
+      <figure><video src="vid/sasha_vlog_uvolili.mp4" poster="img/poster_sasha_vlog_uvolili.jpg" controls muted loop playsinline preload="none"></video><figcaption class="cap">57 067 просмотров · влог «меня уволили — переехала в деревню»</figcaption></figure>
+      <figure><video src="vid/sasha_r14k.mp4" poster="img/poster_sasha_r14k.jpg" controls muted loop playsinline preload="none"></video><figcaption class="cap">18 285 просмотров</figcaption></figure>
+      <figure><video src="vid/sasha_handstand.mp4" poster="img/poster_sasha_handstand.jpg" controls muted loop playsinline preload="none"></video><figcaption class="cap">6 365 просмотров · «вот так могу ещё»</figcaption></figure>
     </div>
   </section>
 
   <section id="about">
     <div class="head">
       <div class="txt">
-        <span class="num">05 — Как работаю</span>
-        <h2>От фото товара до готовой карточки</h2>
+        <span class="num">05 — Услуги и как работаю</span>
+        <h2>Что делаю</h2>
       </div>
     </div>
+    <ul class="services">
+      <li><b>Нейрофотосессия для карточки</b><span>8–10 кадров с одной моделью в одной локации</span></li>
+      <li><b>Инфографика</b><span>слайды в стиле вашей категории, тексты без ошибок</span></li>
+      <li><b>Видео для карточки</b><span>по образцу видео из вашей ниши на WB</span></li>
+      <li><b>A/B главного фото</b><span>3–4 обложки под тест кликабельности</span></li>
+      <li><b>Реклама у AI-блогера</b><span>интеграция товара в Reels персонажа</span></li>
+    </ul>
+    <span class="num sub">Как работаю</span>
     <ol class="steps">
       <li><b>Присылаете фото товара</b><span>Можно с телефона или раскладку. Плюс пожелания: стиль, модель, референсы конкурентов.</span></li>
       <li><b>Согласуем первый кадр</b><span>Модель, локация и свет. Пока он не утверждён, серию не делаю.</span></li>
@@ -292,7 +335,7 @@ video{aspect-ratio:9/16;object-fit:cover}
     </ol>
     <div class="about">
       <p>Nano Banana Pro · GPT Image 2.5 · Higgsfield · Kling 3.0 · Seedance · Photoshop · Figma</p>
-      <p class="contacts">Telegram <a href="https://t.me/poolina_g">@poolina_g</a> · <a href="mailto:polya.glushko@gmail.com">polya.glushko@gmail.com</a></p>
+      <p class="contacts">Telegram <a href="https://t.me/poolina_g">@poolina_g</a> · <a href="mailto:polya.glushko@gmail.com">polya.glushko@gmail.com</a> · <a href="portfolio.pdf" target="_blank" rel="noopener">портфолио в PDF</a></p>
       <p>Полина Глухова · Ижевск, удалённо · самозанятая. Готова сделать тестовое на вашем товаре.</p>
     </div>
   </section>
@@ -304,6 +347,23 @@ video{aspect-ratio:9/16;object-fit:cover}
   const links=[...document.querySelectorAll('.menu a')];
   const io=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){links.forEach(a=>a.classList.toggle('on',a.getAttribute('href')==='#'+e.target.id))}})},{rootMargin:'-40% 0px -55% 0px'});
   document.querySelectorAll('main section, main .intro').forEach(s=>io.observe(s));
+
+  // lightbox: click a photo to see it large, arrows move within the section
+  const lb=document.createElement('div');lb.className='lb';lb.hidden=true;
+  lb.innerHTML='<img alt=""><button class="x" aria-label="Закрыть">×</button><button class="pv" aria-label="Назад">‹</button><button class="nx" aria-label="Вперёд">›</button><div class="ct"></div>';
+  document.body.appendChild(lb);
+  const lbImg=lb.querySelector('img'),lbCt=lb.querySelector('.ct');let set=[],idx=0;
+  const show=i=>{idx=(i+set.length)%set.length;lbImg.src=set[idx].src;lbImg.alt=set[idx].alt;lbCt.textContent=(idx+1)+' / '+set.length};
+  document.querySelectorAll('main figure img').forEach(img=>img.addEventListener('click',()=>{const sec=img.closest('section')||img.closest('header')||document;set=[...sec.querySelectorAll('figure img')];show(set.indexOf(img));lb.hidden=false;document.body.style.overflow='hidden'}));
+  const close=()=>{lb.hidden=true;document.body.style.overflow=''};
+  lb.querySelector('.x').onclick=close;
+  lb.querySelector('.pv').onclick=e=>{e.stopPropagation();show(idx-1)};
+  lb.querySelector('.nx').onclick=e=>{e.stopPropagation();show(idx+1)};
+  lb.addEventListener('click',e=>{if(e.target===lb)close()});
+  document.addEventListener('keydown',e=>{if(lb.hidden)return;if(e.key==='Escape')close();if(e.key==='ArrowLeft')show(idx-1);if(e.key==='ArrowRight')show(idx+1)});
+  // videos play by themselves (muted) while on screen
+  const vio=new IntersectionObserver(es=>es.forEach(e=>{const v=e.target;if(e.isIntersecting){v.play().catch(()=>{})}else{v.pause()}}),{threshold:.6});
+  document.querySelectorAll('main video').forEach(v=>vio.observe(v));
 </script>
 </body>
 </html>
