@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Полина Глухова — AI-креатор</title>
-<meta name="description" content="Нейрофотосессии и инфографика для карточек Wildberries по одному фото товара, сценарии Reels. Портфолио Полины Глуховой.">
+<meta name="description" content="Нейрофотосессии, инфографика и видео для карточек Wildberries по одному фото товара. AI-персонаж в Reels: ролик на 100 000+ просмотров. Портфолио Полины Глуховой.">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Полина Глухова — AI-креатор">
 <meta property="og:description" content="Фото, инфографика и видео для карточек WB по одному фото товара. AI-персонаж в Reels: ролик на 100 000+ просмотров.">
@@ -118,6 +118,15 @@ main figure img{cursor:zoom-in}
 .about p{color:var(--muted)}
 .about .contacts{color:var(--fg);font-size:16px}
 .about .contacts a{border-bottom:1px solid var(--line)}
+.facts{margin:2px 0 0;display:grid;grid-template-columns:max-content minmax(0,1fr);gap:7px 18px;max-width:66ch;font-size:14.5px;line-height:1.55}
+.facts dt{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);padding-top:3px}
+.facts dd{margin:0}
+.facts a{border-bottom:1px solid var(--line)}
+.q{font-size:12.5px;line-height:1.4;color:var(--muted)}
+.q b{font-weight:500;color:var(--fg)}
+#best{gap:14px;margin-top:-56px}
+.best{display:grid;grid-template-columns:9fr 12fr 12fr 12fr 12fr;gap:var(--gap);align-items:start;max-width:1100px}
+.best .r34 img,.best .r34 video{aspect-ratio:3/4;object-fit:cover}
 
 @media (max-width:900px){
   .side{position:static;width:auto;padding:28px 16px 0;gap:18px}
@@ -142,6 +151,13 @@ main figure img{cursor:zoom-in}
   .row > *{scroll-snap-align:start}
   .head{grid-template-columns:1fr}
   .src{width:120px}
+  #best{margin-top:-40px}
+  .best{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:6px}
+  .best figure{flex:0 0 auto;scroll-snap-align:start}
+  .best .r9{width:44%}
+  .best .r34{width:58.6%}
+  .facts{grid-template-columns:1fr;gap:1px}
+  .facts dd{margin-bottom:8px}
 }
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
 </style>
@@ -186,12 +202,27 @@ main figure img{cursor:zoom-in}
     <a class="tg" href="https://t.me/poolina_g">Написать в Telegram →</a>
   </header>
 
+  <section id="best" aria-label="Лучшее">
+    <span class="num">Лучшее</span>
+    <div class="best">
+      <figure class="r9"><video src="vid/sasha_vlog_uvolili.mp4" poster="img/poster_sasha_vlog_uvolili.jpg" controls muted loop playsinline preload="none"></video><figcaption class="cap">Reels · 100 000+ просмотров</figcaption></figure>
+      <figure class="r34"><video src="vid/polo_card.mp4" poster="img/poster_polo_card.jpg" controls muted loop playsinline preload="none"></video><figcaption class="cap">Видео для карточки WB</figcaption></figure>
+      <figure class="r34"><img src="img/polo_4.jpg" alt="Платье-поло: модель сидя на стуле" loading="eager"><figcaption class="cap">Фото · платье</figcaption></figure>
+      <figure class="r34"><img src="img/cr_3.jpg" alt="Крем: модель держит баночку у лица" loading="eager"><figcaption class="cap">Фото · крем</figcaption></figure>
+      <figure class="r34"><img src="img/mn_1.jpg" alt="Мужской джемпер: модель в полный рост" loading="eager"><figcaption class="cap">Фото · джемпер</figcaption></figure>
+    </div>
+  </section>
+
   <section id="polo">
     <div class="head">
       <div class="txt">
         <span class="num">01 — Одежда · фото, инфографика, видео</span>
         <h2>Платье-поло: из одного фото селлера — студийная съёмка</h2>
-        <p>Одна локация и одна модель, как у брендов на WB: главный кадр, спина, сидя, в движении, крупно лицо и детали, низ с обувью, раскладка. Цвет, рубчик, воротник и пуговицы совпадают с товаром.</p>
+        <dl class="facts">
+          <dt>Задача</dt><dd>Из одного фото селлера собрать всю карточку: съёмку, обложки, инфографику и видео.</dd>
+          <dt>Сделала</dt><dd>9 кадров с одной моделью в одной локации: главный, с жакетом, спина, сидя, в движении, лицо, детали, обувь, раскладка. 4 обложки для A/B-теста, 5 слайдов, видео на 8 секунд. Цвет, рубчик, воротник и пуговицы как у товара.</dd>
+          <dt>Инструменты</dt><dd>Higgsfield: Nano Banana Pro, GPT Image 2.5, Kling 3.0</dd>
+        </dl>
       </div>
       <figure class="src">
         <img src="img/polo_src.jpg" alt="Исходное фото селлера: красное платье-поло в рубчик" loading="eager">
@@ -219,16 +250,16 @@ main figure img{cursor:zoom-in}
     <p class="cap">Четыре гипотезы для обложки: вещь и модель одни, меняется только подача. Победителя выбирают по CTR в рекламном кабинете WB.</p>
     <span class="num sub">Инфографика</span>
     <div class="row" style="--n:5">
-      <figure><img src="img/polo_info1.jpg" alt="Слайд 1: обложка" loading="lazy"></figure>
-      <figure><img src="img/polo_info2.jpg" alt="Слайд 2: детали" loading="lazy"></figure>
-      <figure><img src="img/polo_info3.jpg" alt="Слайд 3: состав и уход" loading="lazy"></figure>
-      <figure><img src="img/polo_info4.jpg" alt="Слайд 4: размеры" loading="lazy"></figure>
-      <figure><img src="img/polo_info5.jpg" alt="Слайд 5: финал" loading="lazy"></figure>
+      <figure><img src="img/polo_info1.jpg" alt="Слайд 1: обложка" loading="lazy"><figcaption class="q"><b>Что это?</b> Платье-поло, размеры 42–50</figcaption></figure>
+      <figure><img src="img/polo_info2.jpg" alt="Слайд 2: детали" loading="lazy"><figcaption class="q"><b>Хорошо ли сшито?</b> Воротник, планка, рубчик крупно</figcaption></figure>
+      <figure><img src="img/polo_info3.jpg" alt="Слайд 3: состав и уход" loading="lazy"><figcaption class="q"><b>Из чего?</b> Состав и уход</figcaption></figure>
+      <figure><img src="img/polo_info4.jpg" alt="Слайд 4: размеры" loading="lazy"><figcaption class="q"><b>Какой размер?</b> Таблица размеров</figcaption></figure>
+      <figure><img src="img/polo_info5.jpg" alt="Слайд 5: финал" loading="lazy"><figcaption class="q"><b>Куда надеть?</b> Одно платье на весь день</figcaption></figure>
     </div>
     <span class="num sub">Видео для карточки</span>
     <div class="vblock">
       <figure><video src="vid/polo_card.mp4" poster="img/poster_polo_card.jpg" controls muted loop playsinline preload="none"></video></figure>
-      <p>8 секунд по образцу видео бренда на WB: общий план, воротник с переходом к лицу, средний план, поворот головы, трикотаж крупно, разворот спиной. Каждый план оживлён из кадра этой же съёмки, поэтому модель и платье совпадают с фото.</p>
+      <p>8 секунд по образцу видео бренда на WB: общий план, воротник с переходом к лицу, средний план, поворот головы, трикотаж крупно, разворот спиной. Каждый план оживлён из кадра этой же съёмки, поэтому модель и платье совпадают с фото. Работает без звука: платье видно целиком с первой секунды.</p>
     </div>
   </section>
 
@@ -237,7 +268,11 @@ main figure img{cursor:zoom-in}
       <div class="txt">
         <span class="num">02 — Косметика · фото и инфографика</span>
         <h2>Крем Orjena: из фото продавца — съёмка в ванной</h2>
-        <p>Предметка на травертине, текстура, модель с баночкой и у зеркала — одна локация и один свет. Этикетка перенесена один в один.</p>
+        <dl class="facts">
+          <dt>Задача</dt><dd>Из фото продавца на сером фоне сделать бьюти-съёмку и инфографику.</dd>
+          <dt>Сделала</dt><dd>8 кадров в одной ванной при одном свете: баночка на травертине, текстура, модель с кремом и у зеркала. Этикетка перенесена один в один. 4 слайда.</dd>
+          <dt>Инструменты</dt><dd>Higgsfield: Nano Banana Pro, GPT Image 2.5</dd>
+        </dl>
       </div>
       <figure class="src">
         <img src="img/cr_src.jpg" alt="Исходное фото продавца: баночка крема Orjena на сером фоне" loading="lazy">
@@ -256,10 +291,10 @@ main figure img{cursor:zoom-in}
     </div>
     <span class="num sub">Инфографика</span>
     <div class="row" style="--n:4">
-      <figure><img src="img/cr_info1.jpg" alt="Крем, слайд 1: обложка" loading="lazy"></figure>
-      <figure><img src="img/cr_info2.jpg" alt="Крем, слайд 2: текстура" loading="lazy"></figure>
-      <figure><img src="img/cr_info3.jpg" alt="Крем, слайд 3: как наносить" loading="lazy"></figure>
-      <figure><img src="img/cr_info4.jpg" alt="Крем, слайд 4: результат" loading="lazy"></figure>
+      <figure><img src="img/cr_info1.jpg" alt="Крем, слайд 1: обложка" loading="lazy"><figcaption class="q"><b>Что даёт?</b> Сияние и увлажнение, 50 мл</figcaption></figure>
+      <figure><img src="img/cr_info2.jpg" alt="Крем, слайд 2: текстура" loading="lazy"><figcaption class="q"><b>Не липкий?</b> Лёгкая тающая текстура</figcaption></figure>
+      <figure><img src="img/cr_info3.jpg" alt="Крем, слайд 3: как наносить" loading="lazy"><figcaption class="q"><b>Как наносить?</b> Три шага утром и вечером</figcaption></figure>
+      <figure><img src="img/cr_info4.jpg" alt="Крем, слайд 4: результат" loading="lazy"><figcaption class="q"><b>Какой результат?</b> Сияние без блеска</figcaption></figure>
     </div>
   </section>
 
@@ -268,7 +303,11 @@ main figure img{cursor:zoom-in}
       <div class="txt">
         <span class="num">03 — Мужская одежда · фото и инфографика</span>
         <h2>Джемпер-поло: из раскладки продавца — съёмка с моделью</h2>
-        <p>Студия с белой стеной, как в мужских карточках брендов: полный рост, спина, крупно ворот, профиль, детали вязки. Цвет, молния и рубчик — как у товара.</p>
+        <dl class="facts">
+          <dt>Задача</dt><dd>Из раскладки продавца на белом сделать съёмку с моделью и инфографику.</dd>
+          <dt>Сделала</dt><dd>6 кадров в студии с белой стеной, как в мужских карточках брендов: полный рост, ворот, спина, на корточках, профиль, манжета. Цвет, молния и рубчик как у товара. 4 слайда.</dd>
+          <dt>Инструменты</dt><dd>Higgsfield: Nano Banana Pro, GPT Image 2.5</dd>
+        </dl>
       </div>
       <figure class="src">
         <img src="img/mn_src.jpg" alt="Исходное фото продавца: оливковый джемпер-поло на белом" loading="lazy">
@@ -285,10 +324,10 @@ main figure img{cursor:zoom-in}
     </div>
     <span class="num sub">Инфографика</span>
     <div class="row" style="--n:4">
-      <figure><img src="img/mn_info1.jpg" alt="Джемпер, слайд 1: обложка" loading="lazy"></figure>
-      <figure><img src="img/mn_info2.jpg" alt="Джемпер, слайд 2: детали" loading="lazy"></figure>
-      <figure><img src="img/mn_info3.jpg" alt="Джемпер, слайд 3: посадка" loading="lazy"></figure>
-      <figure><img src="img/mn_info4.jpg" alt="Джемпер, слайд 4: состав и уход" loading="lazy"></figure>
+      <figure><img src="img/mn_info1.jpg" alt="Джемпер, слайд 1: обложка" loading="lazy"><figcaption class="q"><b>Что это?</b> Джемпер-поло на молнии, 46–56</figcaption></figure>
+      <figure><img src="img/mn_info2.jpg" alt="Джемпер, слайд 2: детали" loading="lazy"><figcaption class="q"><b>Хорошо ли сделано?</b> Ворот, молния, манжеты</figcaption></figure>
+      <figure><img src="img/mn_info3.jpg" alt="Джемпер, слайд 3: посадка" loading="lazy"><figcaption class="q"><b>Как сидит?</b> Свободная посадка</figcaption></figure>
+      <figure><img src="img/mn_info4.jpg" alt="Джемпер, слайд 4: состав и уход" loading="lazy"><figcaption class="q"><b>Из чего?</b> Состав и уход</figcaption></figure>
     </div>
     <p class="cap">Состав, размеры и свойства на слайдах условные: в реальной карточке берутся из паспорта товара.</p>
   </section>
@@ -298,7 +337,12 @@ main figure img{cursor:zoom-in}
       <div class="txt">
         <span class="num">04 — AI-персонаж · Reels</span>
         <h2>Саша: AI-блогер, которая переехала из Москвы на конюшню</h2>
-        <p>Придумала персонажа и легенду, держу одно лицо во всех кадрах и делаю Reels по трендам: стоп-кадры, оживление, монтаж, тексты. Один ролик набрал 100&nbsp;000+ просмотров без рекламы. <a href="https://www.instagram.com/sasha.notalex/" target="_blank" rel="noopener" style="border-bottom:1px solid var(--line);color:var(--fg)">@sasha.notalex</a></p>
+        <dl class="facts">
+          <dt>Задача</dt><dd>Запустить AI-блогера в Instagram с нуля и набрать просмотры без рекламы.</dd>
+          <dt>Сделала</dt><dd>Персонажа и легенду, одно лицо во всех кадрах, сценарии и хуки по трендам, генерацию кадров и видео, монтаж и титры.</dd>
+          <dt>Результат</dt><dd>Ролик «меня уволили» — 100&nbsp;000+ просмотров без рекламы. <a href="https://www.instagram.com/sasha.notalex/" target="_blank" rel="noopener">@sasha.notalex</a></dd>
+          <dt>Инструменты</dt><dd>Higgsfield: Soul 2.0, Cinema Studio, Kling 3.0, Seedance · Topaz</dd>
+        </dl>
       </div>
       <figure class="src">
         <img src="img/sasha_etalon_v3.jpg" alt="Эталон лица Саши: чёрные кудри, голубые глаза" loading="lazy" style="aspect-ratio:1/1;object-fit:cover">
