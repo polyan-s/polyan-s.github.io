@@ -125,7 +125,7 @@ main figure img{cursor:zoom-in}
 .q{font-size:12.5px;line-height:1.4;color:var(--muted)}
 .q b{font-weight:500;color:var(--fg)}
 #best{gap:14px;margin-top:-56px}
-.best{display:grid;grid-template-columns:9fr 12fr 12fr 12fr 12fr;gap:var(--gap);align-items:start;max-width:1100px}
+.best{display:grid;grid-template-columns:12fr 12fr 12fr 12fr 9fr;gap:var(--gap);align-items:start;max-width:1100px}
 .best .r34 img,.best .r34 video{aspect-ratio:3/4;object-fit:cover}
 
 @media (max-width:900px){
@@ -205,11 +205,11 @@ main figure img{cursor:zoom-in}
   <section id="best" aria-label="Лучшее">
     <span class="num">Лучшее</span>
     <div class="best">
-      <figure class="r9"><video src="vid/sasha_vlog_uvolili.mp4" poster="img/poster_sasha_vlog_uvolili.jpg" controls muted loop playsinline preload="none"></video><figcaption class="cap">Reels · 100 000+ просмотров</figcaption></figure>
-      <figure class="r34"><video src="vid/polo_card.mp4" poster="img/poster_polo_card.jpg" controls muted loop playsinline preload="none"></video><figcaption class="cap">Видео для карточки WB</figcaption></figure>
       <figure class="r34"><img src="img/polo_4.jpg" alt="Платье-поло: модель сидя на стуле" loading="eager"><figcaption class="cap">Фото · платье</figcaption></figure>
       <figure class="r34"><img src="img/cr_3.jpg" alt="Крем: модель держит баночку у лица" loading="eager"><figcaption class="cap">Фото · крем</figcaption></figure>
       <figure class="r34"><img src="img/mn_1.jpg" alt="Мужской джемпер: модель в полный рост" loading="eager"><figcaption class="cap">Фото · джемпер</figcaption></figure>
+      <figure class="r34"><video src="vid/polo_card.mp4" poster="img/poster_polo_card.jpg" controls muted loop playsinline preload="none"></video><figcaption class="cap">Видео для карточки WB</figcaption></figure>
+      <figure class="r9"><video src="vid/sasha_vlog_uvolili.mp4" poster="img/poster_sasha_vlog_uvolili.jpg" controls muted loop playsinline preload="none"></video><figcaption class="cap">Reels · 100 000+ просмотров</figcaption></figure>
     </div>
   </section>
 
@@ -220,7 +220,7 @@ main figure img{cursor:zoom-in}
         <h2>Платье-поло: из одного фото селлера — студийная съёмка</h2>
         <dl class="facts">
           <dt>Задача</dt><dd>Из одного фото селлера собрать всю карточку: съёмку, обложки, инфографику и видео.</dd>
-          <dt>Сделала</dt><dd>9 кадров с одной моделью в одной локации: главный, с жакетом, спина, сидя, в движении, лицо, детали, обувь, раскладка. 4 обложки для A/B-теста, 5 слайдов, видео на 8 секунд. Цвет, рубчик, воротник и пуговицы как у товара.</dd>
+          <dt>Сделала</dt><dd>7 кадров с одной моделью в одной локации: главный, сидя, в движении, лицо, детали, обувь, раскладка. 4 обложки для A/B-теста, 4 слайда, видео на 8 секунд. Цвет, рубчик, воротник и пуговицы как у товара.</dd>
           <dt>Срок</dt><dd>Серия фото — 1 день</dd>
           <dt>Инструменты</dt><dd>Higgsfield: Nano Banana Pro, GPT Image 2.5, Kling 3.0</dd>
         </dl>
@@ -230,11 +230,9 @@ main figure img{cursor:zoom-in}
         <figcaption class="cap">Было: фото селлера</figcaption>
       </figure>
     </div>
-    <div class="grid">
+    <div class="grid" style="grid-template-columns:repeat(5,minmax(0,1fr))">
       <figure class="big"><img src="img/polo_1.jpg" alt="Главный кадр: модель в красном платье-поло на оливковом фоне" loading="eager"></figure>
       <figure><img src="img/polo_5.jpg" alt="Портрет крупно, воротник" loading="lazy"></figure>
-      <figure><img src="img/polo_2.jpg" alt="С жакетом в руке" loading="lazy"></figure>
-      <figure><img src="img/polo_3.jpg" alt="Со спины" loading="lazy"></figure>
       <figure><img src="img/polo_4.jpg" alt="Сидя на стуле" loading="lazy"></figure>
       <figure><img src="img/polo_6.jpg" alt="В движении" loading="lazy"></figure>
       <figure><img src="img/polo_7.jpg" alt="Низ платья и ботильоны" loading="lazy"></figure>
@@ -250,13 +248,13 @@ main figure img{cursor:zoom-in}
     </div>
     <p class="cap">Четыре гипотезы для обложки: вещь и модель одни, меняется только подача. Победителя выбирают по CTR в рекламном кабинете WB.</p>
     <span class="num sub">Инфографика</span>
-    <div class="row" style="--n:5">
+    <div class="row" style="--n:4">
       <figure><img src="img/polo_info1.jpg" alt="Слайд 1: обложка" loading="lazy"><figcaption class="q"><b>Что это?</b> Платье-поло, размеры 42–50</figcaption></figure>
       <figure><img src="img/polo_info2.jpg" alt="Слайд 2: детали" loading="lazy"><figcaption class="q"><b>Хорошо ли сшито?</b> Воротник, планка, рубчик крупно</figcaption></figure>
       <figure><img src="img/polo_info3.jpg" alt="Слайд 3: состав и уход" loading="lazy"><figcaption class="q"><b>Из чего?</b> Состав и уход</figcaption></figure>
       <figure><img src="img/polo_info4.jpg" alt="Слайд 4: размеры" loading="lazy"><figcaption class="q"><b>Какой размер?</b> Таблица размеров</figcaption></figure>
-      <figure><img src="img/polo_info5.jpg" alt="Слайд 5: финал" loading="lazy"><figcaption class="q"><b>Куда надеть?</b> Одно платье на весь день</figcaption></figure>
     </div>
+    <p class="cap">Состав, размеры и свойства на слайдах условные: в реальной карточке берутся из паспорта товара.</p>
     <span class="num sub">Видео для карточки</span>
     <div class="vblock">
       <figure><video src="vid/polo_card.mp4" poster="img/poster_polo_card.jpg" controls muted loop playsinline preload="none"></video></figure>
@@ -271,7 +269,7 @@ main figure img{cursor:zoom-in}
         <h2>Крем Orjena: из фото продавца — съёмка в ванной</h2>
         <dl class="facts">
           <dt>Задача</dt><dd>Из фото продавца на сером фоне сделать бьюти-съёмку и инфографику.</dd>
-          <dt>Сделала</dt><dd>8 кадров в одной ванной при одном свете: баночка на травертине, текстура, модель с кремом и у зеркала. Этикетка перенесена один в один. 4 слайда.</dd>
+          <dt>Сделала</dt><dd>6 кадров в одной ванной при одном свете: баночка на травертине, текстура, модель с кремом. Этикетка перенесена один в один. 4 слайда.</dd>
           <dt>Срок</dt><dd>Серия фото — 1 день</dd>
           <dt>Инструменты</dt><dd>Higgsfield: Nano Banana Pro, GPT Image 2.5</dd>
         </dl>
@@ -281,13 +279,11 @@ main figure img{cursor:zoom-in}
         <figcaption class="cap">Было: фото продавца</figcaption>
       </figure>
     </div>
-    <div class="grid">
+    <div class="grid g3">
       <figure><img src="img/cr_1.jpg" alt="Баночка крема на травертине" loading="lazy"></figure>
       <figure><img src="img/cr_3.jpg" alt="Модель держит баночку у лица" loading="lazy"></figure>
-      <figure><img src="img/cr_2.jpg" alt="Открытая баночка и крышка" loading="lazy"></figure>
       <figure><img src="img/cr_4.jpg" alt="Модель наносит крем на скулу" loading="lazy"></figure>
       <figure><img src="img/cr_6.jpg" alt="Мазок текстуры на камне" loading="lazy"></figure>
-      <figure><img src="img/cr_5.jpg" alt="Модель у зеркала с баночкой" loading="lazy"></figure>
       <figure><img src="img/cr_8.jpg" alt="Баночка в руках" loading="lazy"></figure>
       <figure><img src="img/cr_7.jpg" alt="Лицо крупно" loading="lazy"></figure>
     </div>
@@ -298,6 +294,7 @@ main figure img{cursor:zoom-in}
       <figure><img src="img/cr_info3.jpg" alt="Крем, слайд 3: как наносить" loading="lazy"><figcaption class="q"><b>Как наносить?</b> Три шага утром и вечером</figcaption></figure>
       <figure><img src="img/cr_info4.jpg" alt="Крем, слайд 4: результат" loading="lazy"><figcaption class="q"><b>Какой результат?</b> Сияние без блеска</figcaption></figure>
     </div>
+    <p class="cap">Состав, размеры и свойства на слайдах условные: в реальной карточке берутся из паспорта товара.</p>
   </section>
 
   <section id="men">
